@@ -1,0 +1,88 @@
+{
+  "스트릿": {
+    "설명": "스트릿 문화가 형성되는 ‘스트릿(Street)’은 아직 사회적으로 소속감을 가지지 못한 청소년이나 젊은 사람들이 정체성과 욕구를 실현하는 공간을 의미하며, 스트릿 패션에는 이들의 라이프 스타일이 담겨져 있다. MZ 세대가 리드하는 영컬쳐(Young Culture)의 영향으로 스트릿 패션은 그들의 개성과 가치관 그리고 니즈를 대변하며 문화 코드가 되고 있다. MZ 세대는 패션 브랜드가 주도하는 상업적이고 획일적인 유행 스타일을 거부하고, 개인의 개성과 자아를 담아 일상의 요소들을 혼합하여 형식 없이 하는 감각을 가지고 있다. 이들이 표현하는 스트릿 패션은 보는 이에게 새롭고 낯설지만 흥미를 유발하며 하이패션(High Fashion)의 신선한 디자인 영감이 되고 있다. 이러한 현대 스트릿 패션은 하이패션이 되어 젊은 세대의 이색적인 라이프 스타일 문화로 이슈가 되고, 명품 브랜드의 패션 디자인 콘셉트로서 그 영향력과 영역을 확장해 나아가고 있다.",
+    "패션이미지링크": [
+      "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/street_img1.png"
+    ],
+    "스냅이미지링크": [
+      "https://example.com/snap1.jpg",
+      "https://example.com/snap2.jpg"
+    ],
+    "브랜드": {
+      "Supreme": {
+        "공식로고이미지링크": "https://example.com/supreme_logo.jpg",
+        "공식사이트링크": "https://www.supremenewyork.com/",
+        "공식인스타링크": "https://www.instagram.com/supremenewyork/",
+        "브랜드설명": "SUPREME(슈프림)은 1994년 4월 뉴욕 맨하탄 중심가 Lafayette 거리에서 시작된 브랜드입니다. SUPREME은 뉴욕시티 보드문화의 중심이 되었습니다. 뉴욕의 거칠고 반항적인 보더들과 아티스트들이 SUPREME의 Store staff와 고객, 마니아 층을 형성하며, SUPREME은 끊임없이 변하는 뉴욕 중심가 문화의 필수적인 부분으로 성장하였습니다. SUPREME이 다운타운의 명물(혹은 관례,관습)으로 성장하면서, 곧 품질과 스타일 그리고 신뢰로서 브랜드의 가치를 인정받았습니다. SUPREME만의 독특한 정체성을 유지할 수 있도록 우리시대 최고의 디자이너, 아티스트, 포토그래퍼 그리고 뮤지션들이 14년간의 역사와 함께했습니다.",
+        "국가및출시년도": "미국, Since 1994",
+        "브랜드컨셉사진링크": [
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme1.jpg",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme2.jpg.jpg",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme3.jpg",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme4.jpg",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme5.jpg",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme6.jpg",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme7.jpg",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme8.jpg"
+        ],
+        "인기아이템": [
+          {
+            "제품명": "Supreme Announcing T-Shirt White - 21SS",
+            "이미지링크": "https://example.com/supreme_item1.jpg",
+            "구매링크": "https://kream.co.kr/products/453217",
+            "착용샷이미지링크": "https://example.com/supreme_item1_look.jpg"
+          },
+          {
+            "제품명": "Supreme Box Logo Hoodie",
+            "이미지링크": "https://example.com/supreme_item2.jpg",
+            "구매링크": "https://example.com/buy_supreme2",
+            "착용샷이미지링크": "https://example.com/supreme_item2_look.jpg"
+          }
+        ]
+      },
+      "Bape": {
+        "공식로고이미지링크": "https://example.com/bape_logo.jpg",
+        "공식사이트링크": "https://www.carhartt.com/",
+        "공식인스타링크": "https://www.instagram.com/carharttwip/",
+        "브랜드설명": "Carhartt는 워크웨어를 기반으로 한 스트릿 브랜드...",
+        "국가및출시년도": "미국, Since 1889",
+        "브랜드컨셉사진링크": [
+          "https://example.com/carhartt_concept1.jpg"
+        ],
+        "인기아이템": []
+      },
+      "Carhartt": {
+        "공식로고이미지링크": "https://example.com/carhartt_logo.jpg",
+        "공식사이트링크": "https://www.carhartt.com/",
+        "공식인스타링크": "https://www.instagram.com/carharttwip/",
+        "브랜드설명": "Carhartt는 워크웨어를 기반으로 한 스트릿 브랜드...",
+        "국가및출시년도": "미국, Since 1889",
+        "브랜드컨셉사진링크": [
+          "https://example.com/carhartt_concept1.jpg"
+        ],
+        "인기아이템": []
+      },
+       "Stussy": {
+        "공식로고이미지링크": "https://example.com/stussy_logo.jpg",
+        "공식사이트링크": "https://www.carhartt.com/",
+        "공식인스타링크": "https://www.instagram.com/carharttwip/",
+        "브랜드설명": "Carhartt는 워크웨어를 기반으로 한 스트릿 브랜드...",
+        "국가및출시년도": "미국, Since 1889",
+        "브랜드컨셉사진링크": [
+          "https://example.com/carhartt_concept1.jpg"
+        ],
+        "인기아이템": []
+      }
+    }
+  },
+  "고프코어": {
+    "설명": "유래 등 설명 내용",
+    "패션이미지링크": [
+      "https://example.com/gorpcore_image1.jpg"
+    ],
+    "스냅이미지링크": [
+      "https://example.com/gorpcore_snap1.jpg"
+    ],
+    "브랜드": {}
+  }
+}
