@@ -1,23 +1,72 @@
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navigation from "../components/Navigation";
-
-import supremeLogo from "../assets/supreme_logo.png";
-import supremeImg1 from "../assets/supreme1.jpg";
-import supremeImg2 from "../assets/supreme2.jpg";
-import supremeImg3 from "../assets/supreme3.jpg";
-import supremeImg4 from "../assets/supreme4.jpg";
-import supremeImg5 from "../assets/supreme5.jpg";
-import supremeImg6 from "../assets/supreme6.jpg";
-import supremeImg7 from "../assets/supreme7.jpg";
-import supremeImg8 from "../assets/supreme8.jpg";
+import BrandNavigation from "../components/BrandNavigation";
 
 gsap.registerPlugin(ScrollTrigger);
+
+interface StreetData {
+  설명: string;
+  공식로고이미지링크: string[];
+  브랜드컨셉사진링크: string[];
+}
 
 export default function StreetBrand() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const brandRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const [brandData, setBrandData] = useState<
+    Array<{ logo: string; images: string[]; description: string; name: string }>
+  >([]);
+
+  // JSON 데이터 로드
+  useEffect(() => {
+    fetch("/data.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const brands = data.스트릿.브랜드;
+        setBrandData([
+          {
+            logo: brands.Supreme.공식로고이미지링크,
+            images: [...brands.Supreme.브랜드컨셉사진링크],
+            description: brands.Supreme.브랜드설명,
+            name: "Supreme",
+          },
+          {
+            logo: brands.Bape.공식로고이미지링크,
+            images: [...brands.Bape.브랜드컨셉사진링크],
+            description: brands.Bape.브랜드설명,
+            name: "Bape",
+          },
+          {
+            logo: brands.Carhartt.공식로고이미지링크,
+            images: [...brands.Carhartt.브랜드컨셉사진링크],
+            description: brands.Carhartt.브랜드설명,
+            name: "Carhartt",
+          },
+        ]);
+      })
+      .catch((error) => {
+        console.error("Failed to load JSON data:", error);
+      });
+  }, []);
+
+  // 브랜드로 스크롤 이동
+  const scrollToBrand = (index: number) => {
+    const track = trackRef.current;
+    const brand = brandRefs.current[index];
+    if (!track || !brand) return;
+
+    const offsetLeft = brand.offsetLeft - 7 * 16;
+    gsap.to(track, {
+      x: -offsetLeft,
+      duration: 1,
+      ease: "power2.out",
+      // ScrollTrigger와 충돌 방지: overwrite로 기존 애니메이션 우선 처리
+      overwrite: "auto",
+    });
+  };
 
   useLayoutEffect(() => {
     const wrapper = wrapperRef.current;
@@ -68,41 +117,51 @@ export default function StreetBrand() {
     };
   }, []);
 
-  const images = [
-    supremeLogo,
-    supremeImg1,
-    supremeImg2,
-    supremeImg3,
-    supremeImg4,
-    supremeImg5,
-    supremeImg6,
-    supremeImg7,
-    supremeImg8,
-  ];
-
   return (
     <div className="relative w-full h-screen bg-gray-100">
       {/* Navigation 고정 */}
       <Navigation />
+      {/* BrandNavigation 추가 */}
+      <BrandNavigation brands={brandData.map((brand) => brand.name)} scrollToBrand={scrollToBrand} />
 
       <section
         ref={wrapperRef}
-        className="relative h-screen w-full ml-[150px] overflow-hidden bg-green-200" // Navigation 너비만큼 margin-left
+        className="relative h-screen w-full ml-[150px] overflow-hidden bg-black"
       >
         <div
           ref={trackRef}
-          className="flex h-full w-[900vw] gallery-track" // 트랙 너비는 이미지 개수만큼 vw 단위로
+          className="flex h-full w-[1500vw] gallery-track" // 트랙 너비 1500vw
         >
-          {images.map((src, index) => (
-            <div
-              key={index}
-              className="w-screen h-full flex items-center justify-center"
-            >
-              <img
-                src={src}
-                alt={`Supreme ${index}`}
-                className="w-full h-full object-cover"
-              />
+          {brandData.map((brand, brandIndex) => (
+            <div key={brandIndex} className="flex mr-52">
+              <div
+                className="w-[500px] flex flex-col items-center justify-center font-noto_sans mx-28"
+                ref={(el) => (brandRefs.current[brandIndex] = el)}
+              >
+                <div className="text-center text-gray-800 p-4 bg-white">
+                  {brand.logo && (
+                    <img
+                      src={brand.logo}
+                      className="pt-10 mb-4 w-[200px] h-auto mx-auto"
+                    />
+                  )}
+                  <p className="text-base pt-8 px-16 pb-12 z-10">{brand.description}</p>
+                </div>
+              </div>
+              {brand.images.map((src, index) => (
+                <div
+                  key={`${brandIndex}-${index}`}
+                  className={`w-[500px] h-auto mx-32 flex items-center justify-center ${
+                    index % 2 === 0 ? "self-start" : "self-end"
+                  }`}
+                >
+                  <img
+                    src={src}
+                    alt={`Brand ${brandIndex} Image ${index}`}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              ))}
             </div>
           ))}
         </div>
