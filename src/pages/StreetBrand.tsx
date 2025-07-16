@@ -109,7 +109,7 @@ export default function StreetBrand() {
         end: () => `+=${scrollLength}`,
         scrub: 0.5, // 부드러운 스크롤 감도
         pin: true,
-        anticipatePin: 1,
+        anticipatePin: 1
       },
     });
 
