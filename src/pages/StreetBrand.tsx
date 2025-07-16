@@ -45,6 +45,24 @@ export default function StreetBrand() {
             description: brands.Carhartt.브랜드설명,
             name: "Carhartt",
           },
+          {
+            logo: brands.Stussy.공식로고이미지링크,
+            images: [...brands.Stussy.브랜드컨셉사진링크],
+            description: brands.Stussy.브랜드설명,
+            name: "Stussy",
+          },
+          {
+            logo: brands.Nike.공식로고이미지링크,
+            images: [...brands.Nike.브랜드컨셉사진링크],
+            description: brands.Nike.브랜드설명,
+            name: "Nike",
+          },
+          {
+            logo: brands.Adidas.공식로고이미지링크,
+            images: [...brands.Adidas.브랜드컨셉사진링크],
+            description: brands.Adidas.브랜드설명,
+            name: "Adidas",
+          },
         ]);
       })
       .catch((error) => {
@@ -92,7 +110,6 @@ export default function StreetBrand() {
         scrub: 0.5, // 부드러운 스크롤 감도
         pin: true,
         anticipatePin: 1,
-        markers: true, // 디버깅용 (필요 시 주석 처리)
       },
     });
 
@@ -118,7 +135,7 @@ export default function StreetBrand() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen bg-gray-100">
+    <div className="relative w-full h-screen">
       {/* Navigation 고정 */}
       <Navigation />
       {/* BrandNavigation 추가 */}
@@ -130,13 +147,15 @@ export default function StreetBrand() {
       >
         <div
           ref={trackRef}
-          className="flex h-full w-[1500vw] gallery-track" // 트랙 너비 1500vw
+          className="flex h-full w-[2150vw] gallery-track" // 트랙 너비 1500vw
         >
           {brandData.map((brand, brandIndex) => (
             <div key={brandIndex} className="flex mr-52">
               <div
                 className="w-[500px] flex flex-col items-center justify-center font-noto_sans mx-28"
-                ref={(el) => (brandRefs.current[brandIndex] = el)}
+                ref={(el) => {
+                  brandRefs.current[brandIndex] = el; // 반환값 없음
+                }}
               >
                 <div className="text-center text-gray-800 p-4 bg-white">
                   {brand.logo && (
@@ -151,7 +170,7 @@ export default function StreetBrand() {
               {brand.images.map((src, index) => (
                 <div
                   key={`${brandIndex}-${index}`}
-                  className={`w-[500px] h-auto mx-32 flex items-center justify-center ${
+                  className={`w-[580px] h-auto mx-32 flex items-center justify-center ${
                     index % 2 === 0 ? "self-start" : "self-end"
                   }`}
                 >

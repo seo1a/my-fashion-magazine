@@ -160,6 +160,9 @@ export default function Home() {
               if (trend.hashtag === '#스트릿') {
                 navigate('/street');
               }
+              else if (trend.hashtag === '#프레피룩') {
+                navigate('/preppy');
+              }
             }}
           >
             {trend.backgroundImage ? (

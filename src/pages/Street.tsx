@@ -52,7 +52,7 @@ export default function Street() {
 
                 {/* 왼쪽 설명글 영역 */}
                 <div className="w-[35%] flex flex-col items-center justify-center font-noto_sans ml-36">
-                    <div className="text-center text-gray-800 p-4 bg-white rounded-lg ml-40 mt-40">
+                    <div className="text-center text-gray-800 p-4 bg-white ml-40 mt-40">
                         <h2 className="text-3xl font-bold pt-10 mb-4">스트릿 패션</h2>
                         <p className="text-base pt-8 pb-12 px-12">
                             {streetData?.설명 || "로딩 중..."}

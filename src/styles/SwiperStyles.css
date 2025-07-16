@@ -1,0 +1,27 @@
+/*
+.swiper-slide-active {
+  opacity: 1;
+}
+.swiper-slide {
+  opacity: 0.3;
+}
+*/
+
+.swiper-button-next {
+  color: #D3D3D3 !important;
+}
+
+.swiper-button-prev {
+  color: #D3D3D3 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #666666 !important;
+}
+
+.swiper {
+  margin-bottom: 0 !important;
+}
+.swiper-pagination {
+  margin-top: 5px !important; 
+}

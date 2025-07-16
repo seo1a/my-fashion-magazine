@@ -13,7 +13,7 @@ const BrandNavigation: FC<BrandNavigationProps> = ({ brands, scrollToBrand }) =>
   ].slice(0, 7);
 
   return (
-    <div className="fixed top-4 right-4 flex space-x-2 z-20">
+    <div className="fixed top-4 right-4 flex space-x-4 z-20">
       {brandNames.map((name, index) => (
         <button
           key={index}

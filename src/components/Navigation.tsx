@@ -21,7 +21,7 @@ export default function Navigation () {
       >
         Brands
       </Link>
-      <Link to="/component2" className="w-3/4 bg-white text-center border border-black py-4 mb-2 hover:bg-gray-400 cursor-pointer block">
+      <Link to="/street/item" className="w-3/4 bg-white text-center border border-black py-4 mb-2 hover:bg-gray-400 cursor-pointer block">
         Items
       </Link>
       <Link to="/component3" className="w-3/4 bg-white text-center border border-black py-4 hover:bg-gray-400 cursor-pointer block">
