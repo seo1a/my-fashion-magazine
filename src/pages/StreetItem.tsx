@@ -86,8 +86,8 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
     <div className="w-full min-h-screen bg-black text-black font-sans flex">
       {/* Navigation 컴포넌트: 고정 너비 150px */}
       <Navigation />
-      
       <div className="flex-1 ml-[150px] px-4 py-16">
+
         {/* 아이템 선택 버튼 */}
         <div className="flex justify-center mb-8">
           {items.map((item) => (
@@ -140,7 +140,7 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
               ))}
             </Swiper>
             {/* 색상 옵션 버튼 (Announcing T-Shirt 전용) */}
-            {selectedItem.제품명.includes('Announcing T-Shirt') && (
+            {selectedItem.옵션.length > 1 && (
               <div className="flex justify-center gap-2">
                 {selectedItem.옵션.map((option) => (
                   <button

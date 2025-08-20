@@ -16,15 +16,39 @@
         "브랜드설명": "SUPREME(슈프림)은 1994년 4월 뉴욕 맨하탄 중심가 Lafayette 거리에서 시작된 브랜드입니다. SUPREME은 뉴욕시티 보드문화의 중심이 되었습니다. 뉴욕의 거칠고 반항적인 보더들과 아티스트들이 SUPREME의 Store staff와 고객, 마니아 층을 형성하며, SUPREME은 끊임없이 변하는 뉴욕 중심가 문화의 필수적인 부분으로 성장하였습니다. SUPREME이 다운타운의 명물(혹은 관례,관습)으로 성장하면서, 곧 품질과 스타일 그리고 신뢰로서 브랜드의 가치를 인정받았습니다. SUPREME만의 독특한 정체성을 유지할 수 있도록 우리시대 최고의 디자이너, 아티스트, 포토그래퍼 그리고 뮤지션들이 14년간의 역사와 함께했습니다.",
         "국가및출시년도": "미국, Since 1994",
         "브랜드컨셉사진링크": [
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme1.jpg",
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme2.jpg",
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme3.jpg",
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme4.jpg",
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme5.jpg",
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme6.jpg",
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme7.jpg",
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme8.jpg"
-        ]     
+            {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme1.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme2.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme3.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme4.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme5.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme6.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme7.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme8.jpg"
+          }
+        ]
       },
       "Bape": {
         "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bapeLogo.png",
@@ -33,14 +57,38 @@
         "브랜드설명": "베이프(BAPE)는 세상의 기준에 도전하고, 경계를 넘어서는 이들을 위한 브랜드입니다.1993년 하라주쿠에서 니고(NIGO)가 설립하여 스트리트 패션 아이콘으로 자리 잡아왔으며, 독창적인 디자인과 캐릭터로 전 세계 팬들의 사랑을 받고 있습니다.",
         "국가및출시년도": "일본, Since 1993",
         "브랜드컨셉사진링크": [
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape1.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape2.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape3.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape4.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape5.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape6.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape7.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape8.jpg"
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape1.jpg"
+          },        
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape2.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape3.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape4.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape5.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape6.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape7.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape8.jpg"
+          }
         ]
       },
       "Carhartt": {
@@ -50,14 +98,38 @@
         "브랜드설명": "칼하트(CARHARTT)는 1889년 미국에서 설립된 워크 웨어 브랜드입니다. 오랜 역사와 전통을 자랑하는 이 브랜드는 뛰어난 내구성과 기능성으로 유명합니다. 그들의 제품은 근면성과 견고함을 상징하며, 도전적인 환경에서도 뛰어난 성능을 발휘합니다. 또한, 시간이 지남에 따라 더욱 멋스러워지는 디자인이 특징입니다. 칼하트는 튼튼하면서도 스타일리시한 워크 웨어 상품을 선보입니다.",
         "국가및출시년도": "미국, Since 1899",
         "브랜드컨셉사진링크": [
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt1.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt2.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt3.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt4.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt5.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt6.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt7.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt8.jpg"
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt1.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt2.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt3.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt4.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt5.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt6.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt7.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt8.jpg"
+          }
         ]
       },
        "Stussy": {
@@ -67,13 +139,34 @@
         "브랜드설명": "스투시는 1980년 SHAWN STUSSY라는 서프보드에 열광하는 CREW가 만든 브랜드 입니다. 스투시의 특유의 로고는 SHAWN STUSSY의 삼촌이 만든 로고로 지금은 스트릿웨어에서 빼놓을수 없는 브랜드로 자리 잡았지만 스투시의 시초는 캘리포니아에서 그가 티셔츠와 서프보드를 만들면서 시작된 작은 브랜드였습니다. 스투시의 성공요인은 언제나 열린마인드로 도쿄와 런던 뉴욕의 보더, DJ등과 교류를 하며 그들의 문화를 콘셉트으로 잡고 1970~80년대 영국 펑크의 DIY정신까지 받아들여 현재까지 독립적이며 모든 스트릿 문화를 좋아하는 사람들이 동경하는 브랜드로 자리 잡았습니다.",
         "국가및출시년도": "미국, Since 1980",
         "브랜드컨셉사진링크": [
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/3FD2CFDC-5BF5-4E90-A11C-9CA1C9A690A5.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/586AF0B3-E332-4F0D-95D2-BBA7D4846021.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/8CA4A88C-5ABA-4A18-811E-E47EC4101A35.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/A71440B8-51F4-4065-B270-E5EB0281F975.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/3FD2CFDC-5BF5-4E90-A11C-9CA1C9A690A5.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/D53B707B-5A52-4A15-9DFE-CF0EBF99B97F.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/F87DA3A5-F4E7-4C76-89F8-B4894E847A65.jpeg"
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/3FD2CFDC-5BF5-4E90-A11C-9CA1C9A690A5.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/586AF0B3-E332-4F0D-95D2-BBA7D4846021.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/8CA4A88C-5ABA-4A18-811E-E47EC4101A35.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/A71440B8-51F4-4065-B270-E5EB0281F975.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/3FD2CFDC-5BF5-4E90-A11C-9CA1C9A690A5.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/D53B707B-5A52-4A15-9DFE-CF0EBF99B97F.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/F87DA3A5-F4E7-4C76-89F8-B4894E847A65.jpeg"
+          }
         ]
       },
       "Nike": {
@@ -83,13 +176,38 @@
         "브랜드설명": "1964년 설립된 나이키(NIKE)는 다양한 컬래버레이션과 두터운 마니아층들로 그 위치를 증명하는 브랜드입니다. 자신의 한계를 뛰어넘는 스포츠 정신이 바로 나이키 브랜드를 상징하며, '실패를 두려워하지 말라'는 메시지는 많은 사람들에게 긍정적인 희망을 주어 나이키의 핵심 가치이자 철학으로 자리매김했습니다. 나이키는 운동 선수들의 목소리에 귀를 기울이고, 그들이 최고의 기량을 발휘할 수 있도록 돕는 제품을 생산합니다. 세계적인 발자취, 혁신 문화와 팀 우선 정신을 바탕으로 전 세계를 위한 끊임없는 스포츠의 미래를 창조하고 있습니다.",
         "국가및출시년도": "미국, Since 1964",
         "브랜드컨셉사진링크": [
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/0585A1E1-517F-4A6A-AF95-49435B7906A5.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/06A5F2CC-12D3-43D1-B1BF-CAC439560429.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/3D122324-D233-4CF3-8EE8-A11AFEEDFFB4.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/830EC07C-E11C-4515-8706-2681F209AAE0.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/AA042412-9728-449A-B638-8E5B325670C1.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/AD6B0908-C1D8-4DA8-A8E0-110F0936D91D.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/F69A3DA2-CEDB-4CE7-BCE0-413D65BB02CF.jpeg"
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/0585A1E1-517F-4A6A-AF95-49435B7906A5.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/06A5F2CC-12D3-43D1-B1BF-CAC439560429.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/3D122324-D233-4CF3-8EE8-A11AFEEDFFB4.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/830EC07C-E11C-4515-8706-2681F209AAE0.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/AA042412-9728-449A-B638-8E5B325670C1.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/AD6B0908-C1D8-4DA8-A8E0-110F0936D91D.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/F69A3DA2-CEDB-4CE7-BCE0-413D65BB02CF.jpeg"
+          },
+          {
+            "type": "video",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/E61BEC23-AE4A-45A5-A205-CD4BBFE92007.mp4"
+          }
         ]
       },
       "Adidas": {
@@ -99,13 +217,38 @@
         "브랜드설명": "스포츠 라이프스타일은 라커룸 밖에서도 계속됩니다. 1920년부터 독일의 헤르초게나우라흐에서 스포츠 슈즈를 만들던 아디다스(ADIDAS)는 이러한 철학을 토대로 경기장에서부터 거리에 이르기까지 모두가 즐길 수 있는 '스포츠 라이프스타일'의 개념을 처음으로 도입한 브랜드입니다. 스포츠 영역의 다양한 요소를 일상의 영역으로 가져오는 아디다스는 이를 통해 전 세계의 트렌드를 주도하고 있으며, 지금도 여전히 자신의 다양한 모습을 보여주고 싶어하는 소비자와 직접 소통하며 함께 혁신적인 트렌드를 만들고 있습니다.",
         "국가및출시년도": "독일, Since 1949",
         "브랜드컨셉사진링크": [
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/15A5401D-7ABF-4A9E-A455-1E57268B4379.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/1C89C19F-1DAC-4DF7-A806-AA8D88AA1BDB.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/52115025-7EF3-4207-A2C9-E5978DD8714E.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/8E7D8AAA-C91E-4D59-B9A9-BA4BD6C87BB2.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/9D1FA3FC-D580-4BC7-AF75-A754B9CFED58.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/B88B87DF-911F-49EF-8FEA-F07736B9356B.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/F47E30D7-0828-47E3-BCBF-4648D33CB1C0.jpeg"
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/15A5401D-7ABF-4A9E-A455-1E57268B4379.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/1C89C19F-1DAC-4DF7-A806-AA8D88AA1BDB.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/52115025-7EF3-4207-A2C9-E5978DD8714E.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/8E7D8AAA-C91E-4D59-B9A9-BA4BD6C87BB2.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/9D1FA3FC-D580-4BC7-AF75-A754B9CFED58.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/B88B87DF-911F-49EF-8FEA-F07736B9356B.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/F47E30D7-0828-47E3-BCBF-4648D33CB1C0.jpeg"
+          },
+          {
+            "type": "video",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/C0178784-5417-4664-9D00-3014F7F9E0C0.mp4"
+          }
         ]
       }
     },
@@ -183,11 +326,197 @@
           ]
         }
       ]
+    },
+    {
+      "제품명": "BAPE Japan Big Ape Head City T-Shirt",
+      "옵션": [
+        {
+          "색상": "black",
+          "모델이미지링크": "url_or_path_to_model_white.jpg",
+          "상세이미지링크": [
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeeblack1.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeeblack2.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeeblack3.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeeblack4.png"
+          ]
+        },
+        {
+          "색상": "white",
+          "모델이미지링크": "url_or_path_to_model_white.jpg",
+          "상세이미지링크": [
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeewhite1.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeewhite2.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeewhite3.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeewhite4.png"
+          ]
+        },
+        {
+          "색상": "white pink",
+          "모델이미지링크": "url_or_path_to_model_white.jpg",
+          "상세이미지링크": [
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeewhitepink1.png"
+          ]
+        },
+        {
+          "색상": "black pink",
+          "모델이미지링크": "url_or_path_to_model_white.jpg",
+          "상세이미지링크": [
+             "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeeblackpink1.png"
+          ]
+        },
+        {
+          "색상": "navy pink",
+          "모델이미지링크": "url_or_path_to_model_white.jpg",
+          "상세이미지링크": [
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeenavypink1.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeenavypink2.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeenavypink3.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeenavypink4.png"
+          ]
+        },
+        {
+          "색상": "white blue",
+          "모델이미지링크": "url_or_path_to_model_white.jpg",
+          "상세이미지링크": [
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeewhiteblue1.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeewhiteblue2.png"
+          ]
+        },
+        {
+          "색상": "black blue",
+          "모델이미지링크": "url_or_path_to_model_white.jpg",
+          "상세이미지링크": [
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeeblackblue1.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/bapeJapanBigApeHeadCityTee/bapeTeeblackblue2.png"
+          ]
+        }
+      ]
+    },
+    {
+      "제품명": "Nike Air Force 1 '07",
+      "옵션": [
+        {
+          "색상": "white",
+          "모델이미지링크": "url_or_path_to_model_white.jpg",
+          "상세이미지링크": [
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForcewhite1.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForcewhite2.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForcewhite3.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForcewhite4.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForcewhite5.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForcewhite6.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForcewhite7.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForcewhite8.png"
+          ]
+        },
+        {
+          "색상": "triple black",
+          "모델이미지링크": "url_or_path_to_model_white.jpg",
+          "상세이미지링크": [
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceblack1.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceblack2.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceblack3.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceblack4.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceblack5.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceblack6.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceblack7.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceblack8.png"
+          ]
+        },
+        {
+          "색상": "flax",
+          "모델이미지링크": "url_or_path_to_model_white.jpg",
+          "상세이미지링크": [
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceWB1.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceWB2.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceWB3.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceWB4.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceWB5.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceWB6.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceWB7.png",
+            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/item/nikeAirForce/nikeAirForceWB8.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "스냅": [
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap1.jpg",
+      "출처링크": "https://www.instagram.com/p/DMw7pIRxyYC"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap2.jpg",
+      "출처링크": "https://www.instagram.com/p/DK9mKokSqp5"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap3.jpg",
+      "출처링크": "https://www.instagram.com/p/DLhHx7bzaL6"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap4.jpg",
+      "출처링크": "https://www.instagram.com/p/DL4BF6wTKaB"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap5.jpg",
+      "출처링크": "https://www.instagram.com/p/DNHiXLVzf80"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap6.jpg",
+      "출처링크": "https://www.instagram.com/p/DKIl6sGhFPS"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap7.jpg",
+      "출처링크": "hhttps://www.instagram.com/p/DMe_I0bxMyw"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap8.jpg",
+      "출처링크": "https://www.instagram.com/p/DLs-WgBT78K"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap9.jpg",
+      "출처링크": "https://www.instagram.com/p/DMNY5qXyJ3p"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap1.jpg",
+      "출처링크": "https://www.instagram.com/p/DMw7pIRxyYC"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap1.jpg",
+      "출처링크": "https://www.instagram.com/p/DMw7pIRxyYC"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap1.jpg",
+      "출처링크": "https://www.instagram.com/p/DMw7pIRxyYC"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap1.jpg",
+      "출처링크": "https://www.instagram.com/p/DMw7pIRxyYC"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap1.jpg",
+      "출처링크": "https://www.instagram.com/p/DMw7pIRxyYC"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap1.jpg",
+      "출처링크": "https://www.instagram.com/p/DMw7pIRxyYC"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap1.jpg",
+      "출처링크": "https://www.instagram.com/p/DMw7pIRxyYC"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap1.jpg",
+      "출처링크": "https://www.instagram.com/p/DMw7pIRxyYC"
+    },
+    {
+      "이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/snap/street_snap1.jpg",
+      "출처링크": "https://www.instagram.com/p/DMw7pIRxyYC"
     }
   ]
   },
   "프레피룩": {
-    "설명": "스트릿 문화가 형성되는 ‘스트릿(Street)’은 아직 사회적으로 소속감을 가지지 못한 청소년이나 젊은 사람들이 정체성과 욕구를 실현하는 공간을 의미하며, 스트릿 패션에는 이들의 라이프 스타일이 담겨져 있다. MZ 세대가 리드하는 영컬쳐(Young Culture)의 영향으로 스트릿 패션은 그들의 개성과 가치관 그리고 니즈를 대변하며 문화 코드가 되고 있다. MZ 세대는 패션 브랜드가 주도하는 상업적이고 획일적인 유행 스타일을 거부하고, 개인의 개성과 자아를 담아 일상의 요소들을 혼합하여 형식 없이 하는 감각을 가지고 있다. 이들이 표현하는 스트릿 패션은 보는 이에게 새롭고 낯설지만 흥미를 유발하며 하이패션(High Fashion)의 신선한 디자인 영감이 되고 있다. 이러한 현대 스트릿 패션은 하이패션이 되어 젊은 세대의 이색적인 라이프 스타일 문화로 이슈가 되고, 명품 브랜드의 패션 디자인 콘셉트로서 그 영향력과 영역을 확장해 나아가고 있다.",
+    "설명": "미국의 프레피(아이비 플러스 진학률이 높은 미국의 명문 사립학교 학생들을 전체적으로 일컫는 말. 상류층 자제들이 많은 편이다.)들이 즐겨 입는 스타일에서 유래했다. 이후에는 프레피가 아닌 사람들도 즐겨 입는 패션 스타일이 되었고, 대개 가족 단위의 사람들이 자식들과 함께 많이 입는다. 학생답게 단정하면서도 클래식한 스타일로, 화려하지 않은 셔츠나 블라우스, 정장 바지, 슬랙스 또는 치노 팬츠나 스커트, 테일러드 재킷, 니트 가디건, 메리 제인이나 로퍼 구두, 타이 등이 대표적인 아이템이다.",
     "패션이미지링크": [
       "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/street_img1.png"
     ],
@@ -197,107 +526,213 @@
     ],
     "브랜드": {
       "RalphLauren": {
-        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme_logo2.png",
+        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/ralphlauren_logo.png",
         "공식사이트링크": "https://www.ralphlauren.co.kr/",
         "공식인스타링크": "https://www.instagram.com/ralphlauren/",
-        "브랜드설명": "SUPREME(슈프림)은 1994년 4월 뉴욕 맨하탄 중심가 Lafayette 거리에서 시작된 브랜드입니다. SUPREME은 뉴욕시티 보드문화의 중심이 되었습니다. 뉴욕의 거칠고 반항적인 보더들과 아티스트들이 SUPREME의 Store staff와 고객, 마니아 층을 형성하며, SUPREME은 끊임없이 변하는 뉴욕 중심가 문화의 필수적인 부분으로 성장하였습니다. SUPREME이 다운타운의 명물(혹은 관례,관습)으로 성장하면서, 곧 품질과 스타일 그리고 신뢰로서 브랜드의 가치를 인정받았습니다. SUPREME만의 독특한 정체성을 유지할 수 있도록 우리시대 최고의 디자이너, 아티스트, 포토그래퍼 그리고 뮤지션들이 14년간의 역사와 함께했습니다.",
-        "국가및출시년도": "미국, Since 1994",
+        "브랜드설명": "랄프 로렌은 1967년 랠프 로런이 미국 뉴욕에서 창립한 패션 기업입니다. 뉴욕증권거래소, S&P 500에도 상장된 글로벌 대기업으로, 미드레인지, 매스티지, 럭셔리까지 다양한 라인업의 브랜드 패밀리을 구축하고 있습니다. 한국에서는 주로 매스티지 브랜드인 폴로 랄프 로렌을 지칭하고 취급합니다. 로고는 당시 미국 상류 사회 스포츠로 인기를 끌던 폴로(기마 하키)로, 이는 브랜드명에서도 알 수 있듯 브랜드가 지향하는 정체성을 보여줍니다. 랄프 로렌은 의류 뿐만 아니라 안경, 향수, 가구까지 취급하는 거대 브랜드로 성장했습니다. 주력 상품 중 하나인 폴로 셔츠는 옷깃이 있는 반팔 티셔츠의 대명사로 알려져 있는데, 이 티셔츠는 1972년에 출시했습니다. 가슴팍에 폴로 로고가 크게 새겨진 폴로 티셔츠의 경우 미국과 유럽에서 과장 좀 보태어 3초 패션 수준까지 이르렀을 정도입니다.",
+        "국가및출시년도": "미국, Since 1967",
         "브랜드컨셉사진링크": [
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/01308977-B329-4D5B-919D-285E47E487E1.jpeg",
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/4517E41E-876A-4296-8F4B-547F91285DD4.jpeg",
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/473C4C23-5E70-4C52-84BB-94554723B658.jpeg",
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/730F7118-2737-499E-AE05-E0E59337D8D9.jpeg",
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/8B8A2B14-4729-40EC-A2EC-06BAF6AE3126.jpeg",
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/E5961993-8B4D-4123-9F96-65254F67C9CB.jpeg",
-            "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/FA38C4C8-92AB-490B-B74D-9550F939F4AE.jpeg"
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/01308977-B329-4D5B-919D-285E47E487E1.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/4517E41E-876A-4296-8F4B-547F91285DD4.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/473C4C23-5E70-4C52-84BB-94554723B658.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/730F7118-2737-499E-AE05-E0E59337D8D9.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/8B8A2B14-4729-40EC-A2EC-06BAF6AE3126.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/E5961993-8B4D-4123-9F96-65254F67C9CB.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/FA38C4C8-92AB-490B-B74D-9550F939F4AE.jpeg"
+          },
+          {
+            "type": "video",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/ralphlauren/C35B1B66-6188-4DE8-91AE-0AD1282814CF.mp4"
+          }
         ]
       },
-      "Bape": {
-        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bapeLogo.png",
-        "공식사이트링크": "https://int.bape.com/ko",
-        "공식인스타링크": "https://www.instagram.com/bape_japan/",
-        "브랜드설명": "베이프(BAPE)는 세상의 기준에 도전하고, 경계를 넘어서는 이들을 위한 브랜드입니다.1993년 하라주쿠에서 니고(NIGO)가 설립하여 스트리트 패션 아이콘으로 자리 잡아왔으며, 독창적인 디자인과 캐릭터로 전 세계 팬들의 사랑을 받고 있습니다.",
-        "국가및출시년도": "일본, Since 1993",
+      "Lacoste": {
+        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/lacoste/lacoste_logo.png",
+        "공식사이트링크": "https://www.lacoste.com/kr/",
+        "공식인스타링크": "https://www.instagram.com/lacoste/",
+        "브랜드설명": "LACOSTE(라코스테)는 1920년대 프랑스의 테니스 스타인 장 르네 라코스테(Jean Rene Lacoste)에 의해 만들어진 브랜드입니다. 라코스테가 편안한 운동복을 위해 자신이 입을 선수복 PK 티셔츠를 최초로 만든 것을 시작으로 티셔츠 뿐만 아니라 블레이저 등 다양한 제품군으로 제작을 확장하였습니다. 라코스테의 상징인 악어캐릭터는 라코스테 자신의 별명이었던 `악어`에서 유래하여 탄생되었습니다.",
+        "국가및출시년도": "프랑스, Since 1933",
         "브랜드컨셉사진링크": [
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape1.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape2.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape3.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape4.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape5.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape6.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape7.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/bape/bape8.jpg"
-        ],
-        "인기아이템": []
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/lacoste/390D86BE-9E8A-410A-8E8F-21DB409E391F.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/lacoste/40CD5D6C-10DB-4982-9965-26A2CBA7C1B0.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/lacoste/5CA8C614-809B-4AAA-AFE5-B31E48871991.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/lacoste/7C79370F-CEB0-4128-84C2-3D474F8C6454.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/lacoste/824942D5-387F-45B2-8BBC-6680474DEB2E.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/lacoste/9C716158-660A-4277-AE4B-524661F8211F.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/lacoste/B083A305-295E-491E-AC97-18F9486942DA.jpeg"
+          },
+          {
+            "type": "video",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/lacoste/84993A46-0CF4-48C0-850D-09DEBDC8DFDC.mp4"
+          }
+        ]
       },
-      "Carhartt": {
-        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt_logo.png",
-        "공식사이트링크": "https://www.carhartt-wip.co.kr/",
-        "공식인스타링크": "https://www.instagram.com/carhartt/",
-        "브랜드설명": "칼하트(CARHARTT)는 1889년 미국에서 설립된 워크 웨어 브랜드입니다. 오랜 역사와 전통을 자랑하는 이 브랜드는 뛰어난 내구성과 기능성으로 유명합니다. 그들의 제품은 근면성과 견고함을 상징하며, 도전적인 환경에서도 뛰어난 성능을 발휘합니다. 또한, 시간이 지남에 따라 더욱 멋스러워지는 디자인이 특징입니다. 칼하트는 튼튼하면서도 스타일리시한 워크 웨어 상품을 선보입니다.",
-        "국가및출시년도": "미국, Since 1899",
+      "Maisonkitsune": {
+        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/maisonkitsune/maisonkitsune_logo.png",
+        "공식사이트링크": "https://maisonkitsune.com/",
+        "공식인스타링크": "https://www.instagram.com/maisonkitsune/",
+        "브랜드설명": "MAISON KITSUNE(메종 키츠네)는 패션 디자이너 마사야 쿠로키 와 음악 관련 일을 하던 길다스 로액이 만나 패션과 음악을 접목시켜 2002년 창립한 브랜드로 클래식한 기본 디자인을 모토로 하고 귀여운 여우로고가 특징인 제품들이 많이 있다. 최근 글로벌 브랜드와의 협업, 그리고 최근 시즌 한국을 모토로 시즌전개를 한 이력이 있어 화제가 되고 있다. KITSUNE 는 일본어로 \"여우\" 라는 뜻을 가지고 있기도 하다.",
+        "국가및출시년도": "프랑스, Since 2002",
         "브랜드컨셉사진링크": [
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt1.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt2.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt3.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt4.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt5.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt6.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt7.jpg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt8.jpg"
-        ],
-        "인기아이템": []
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/maisonkitsune/25225C4E-ECD7-4DC1-82F8-1EE66C4FEAD8.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/maisonkitsune/41EDF7A0-5E73-4A09-B268-6447D6DC41F2.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/maisonkitsune/63C7DC98-8BE4-4462-86CF-FB02979AEC97.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/maisonkitsune/C15EB952-5F07-4839-BCD6-1412543FC0C3.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/maisonkitsune/D7628D13-A7C4-41B1-A86F-3C00B3525CDC.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/maisonkitsune/DCEA2FB3-85EB-4E35-ABDC-E081303995C1.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/maisonkitsune/FE7B9029-88A2-4455-9175-DDC4F6011630.jpeg"
+          },
+          {
+            "type": "video",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/maisonkitsune/A41C52A1-D885-4A8E-BF80-10D1ECC79A6F.mp4"
+          }
+        ]
       },
-       "Stussy": {
-        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/stussy_logo.png",
-        "공식사이트링크": "https://kr.stussy.com/",
-        "공식인스타링크": "https://www.instagram.com/stussy",
-        "브랜드설명": "스투시는 1980년 SHAWN STUSSY라는 서프보드에 열광하는 CREW가 만든 브랜드 입니다. 스투시의 특유의 로고는 SHAWN STUSSY의 삼촌이 만든 로고로 지금은 스트릿웨어에서 빼놓을수 없는 브랜드로 자리 잡았지만 스투시의 시초는 캘리포니아에서 그가 티셔츠와 서프보드를 만들면서 시작된 작은 브랜드였습니다. 스투시의 성공요인은 언제나 열린마인드로 도쿄와 런던 뉴욕의 보더, DJ등과 교류를 하며 그들의 문화를 콘셉트으로 잡고 1970~80년대 영국 펑크의 DIY정신까지 받아들여 현재까지 독립적이며 모든 스트릿 문화를 좋아하는 사람들이 동경하는 브랜드로 자리 잡았습니다.",
-        "국가및출시년도": "미국, Since 1980",
+       "Thombrowne": {
+        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/thombrowne/thombrowne_logo.png",
+        "공식사이트링크": "https://www.thombrowne.com/ko-kr",
+        "공식인스타링크": "https://www.instagram.com/thombrowne",
+        "브랜드설명": "THOM BROWNE(톰브라운)는 남성들이 가장 선호하는 패션 브랜드로 남성이 가져야 할 아름다운 모습에 대한 확고한 철학을 디자인에 반영하는 브랜드입니다.",
+        "국가및출시년도": "미국, Since 2003",
         "브랜드컨셉사진링크": [
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/3FD2CFDC-5BF5-4E90-A11C-9CA1C9A690A5.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/586AF0B3-E332-4F0D-95D2-BBA7D4846021.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/8CA4A88C-5ABA-4A18-811E-E47EC4101A35.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/A71440B8-51F4-4065-B270-E5EB0281F975.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/3FD2CFDC-5BF5-4E90-A11C-9CA1C9A690A5.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/D53B707B-5A52-4A15-9DFE-CF0EBF99B97F.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/F87DA3A5-F4E7-4C76-89F8-B4894E847A65.jpeg"
-        ],
-        "인기아이템": []
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/thombrowne/10C9023D-2E1B-42A5-A4A3-BF11BCECB06F.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/thombrowne/302BF767-BCB8-4D61-AB99-97C05767D697.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/thombrowne/75BC9D1F-54E2-48AE-9ADB-5216BF282C78.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/thombrowne/861003CB-B57C-44EC-821D-F80C9C3F3107.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/thombrowne/A4181A12-C5EC-43DA-B614-311D16EE9F8E.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/thombrowne/C91B9B16-9201-4998-9E67-1DB47B2BE592.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/thombrowne/CDAD09B1-5A80-42CB-A198-911F7FCCE68B.jpeg"
+          },
+          {
+            "type": "video",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/thombrowne/D841A857-56E9-4C0A-A42D-AB5705609934.mp4"
+          }
+        ]
       },
-      "Nike": {
-        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/nike_logo.png",
-        "공식사이트링크": "https://www.nike.com/kr",
-        "공식인스타링크": "https://www.instagram.com/nike",
-        "브랜드설명": "1964년 설립된 나이키(NIKE)는 다양한 컬래버레이션과 두터운 마니아층들로 그 위치를 증명하는 브랜드입니다. 자신의 한계를 뛰어넘는 스포츠 정신이 바로 나이키 브랜드를 상징하며, '실패를 두려워하지 말라'는 메시지는 많은 사람들에게 긍정적인 희망을 주어 나이키의 핵심 가치이자 철학으로 자리매김했습니다. 나이키는 운동 선수들의 목소리에 귀를 기울이고, 그들이 최고의 기량을 발휘할 수 있도록 돕는 제품을 생산합니다. 세계적인 발자취, 혁신 문화와 팀 우선 정신을 바탕으로 전 세계를 위한 끊임없는 스포츠의 미래를 창조하고 있습니다.",
-        "국가및출시년도": "미국, Since 1964",
+      "Tommyhilfiger": {
+        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/tommyhilfiger/tommyhilfiger_logo.png",
+        "공식사이트링크": "https://www.hfashionmall.com/display/brand?brndCtgryNo=BDMA08",
+        "공식인스타링크": "https://www.instagram.com/tommyhilfiger",
+        "브랜드설명": "타미힐피거(TOMMY HILFIGER)는 아메리칸 클래식 캐주얼 브랜드로, 클래식한 스타일에 세련된 미국의 팝 문화 정신에서 얻은 영감을 더해 다양한 스타일의 모던 패션을 제안합니다.",
+        "국가및출시년도": "미국, Since 1985",
         "브랜드컨셉사진링크": [
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/0585A1E1-517F-4A6A-AF95-49435B7906A5.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/06A5F2CC-12D3-43D1-B1BF-CAC439560429.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/3D122324-D233-4CF3-8EE8-A11AFEEDFFB4.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/830EC07C-E11C-4515-8706-2681F209AAE0.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/AA042412-9728-449A-B638-8E5B325670C1.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/AD6B0908-C1D8-4DA8-A8E0-110F0936D91D.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/F69A3DA2-CEDB-4CE7-BCE0-413D65BB02CF.jpeg"
-        ],
-        "인기아이템": []
-      },
-      "Adidas": {
-        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/adidas_logo.png",
-        "공식사이트링크": "https://www.adidas.co.kr/",
-        "공식인스타링크": "https://www.instagram.com/adidas",
-        "브랜드설명": "스포츠 라이프스타일은 라커룸 밖에서도 계속됩니다. 1920년부터 독일의 헤르초게나우라흐에서 스포츠 슈즈를 만들던 아디다스(ADIDAS)는 이러한 철학을 토대로 경기장에서부터 거리에 이르기까지 모두가 즐길 수 있는 '스포츠 라이프스타일'의 개념을 처음으로 도입한 브랜드입니다. 스포츠 영역의 다양한 요소를 일상의 영역으로 가져오는 아디다스는 이를 통해 전 세계의 트렌드를 주도하고 있으며, 지금도 여전히 자신의 다양한 모습을 보여주고 싶어하는 소비자와 직접 소통하며 함께 혁신적인 트렌드를 만들고 있습니다.",
-        "국가및출시년도": "독일, Since 1949",
-        "브랜드컨셉사진링크": [
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/15A5401D-7ABF-4A9E-A455-1E57268B4379.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/1C89C19F-1DAC-4DF7-A806-AA8D88AA1BDB.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/52115025-7EF3-4207-A2C9-E5978DD8714E.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/8E7D8AAA-C91E-4D59-B9A9-BA4BD6C87BB2.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/9D1FA3FC-D580-4BC7-AF75-A754B9CFED58.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/B88B87DF-911F-49EF-8FEA-F07736B9356B.jpeg",
-          "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/F47E30D7-0828-47E3-BCBF-4648D33CB1C0.jpeg"
-        ],
-        "인기아이템": []
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/tommyhilfiger/041DEB9C-329D-4CD5-90E6-ACAEA1607DB1.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/tommyhilfiger/0A4830E6-EEC5-4240-85A5-E9032D913D27.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/tommyhilfiger/4F1B7245-061C-448B-A9FB-59AC7E2D6439.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/tommyhilfiger/9B0EAAA8-4559-48E8-8C82-E762A44105DD.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/tommyhilfiger/F219FC8E-EE6C-4342-8769-93C69F14C243.jpeg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/tommyhilfiger/FA38C4C8-92AB-490B-B74D-9550F939F4AE.jpeg"
+          },
+          {
+            "type": "video",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/tommyhilfiger/2CB7BB63-C215-4C53-BE37-373B4FCABDDB.mp4"
+          },
+          {
+            "type": "video",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/tommyhilfiger/D4FC7E5A-1424-4E97-9C59-0EC72996A0DC.mp4"
+          },
+          {
+            "type": "video",
+            "url": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/preppy/tommyhilfiger/E5703EF3-BD29-40F9-9470-9E10614F9283.mp4"
+          }
+        ]
       }
     }
   }
