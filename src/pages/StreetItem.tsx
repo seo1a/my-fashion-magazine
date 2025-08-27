@@ -83,7 +83,7 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-black text-black font-sans flex">
+    <div className="w-full min-h-screen bg-black text-black font-noto_sans flex">
       {/* Navigation 컴포넌트: 고정 너비 150px */}
       <Navigation />
       <div className="flex-1 ml-[150px] px-4 py-16">
@@ -97,7 +97,7 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
                 setSelectedItem(item);
                 setSelectedColor(item.옵션[0]);
               }}
-              className={`mx-2 px-4 py-2 rounded-full text-lg font-medium transition-colors ${
+              className={`mx-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 selectedItem.제품명 === item.제품명
                   ? 'bg-gray-800 text-white'
                   : 'bg-gray-200 text-black hover:bg-gray-300'
@@ -109,7 +109,7 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
         </div>
 
         {/* 아이템 상세: Swiper 슬라이더 */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-40">
           <div className="w-full max-w-4xl">
             <Swiper
               modules={[SwiperNavigation, Pagination]}
@@ -118,7 +118,7 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
               spaceBetween={30}
               slidesPerView={1}
               speed={800}
-              className="w-full h-[60vh] md:h-[80vh] mobile:w-[60vw]"
+              className="w-full h-[60vh] md:h-[70vh] mobile:w-[60vw]"
               onSwiper={(swiper) => (swiperRef.current = swiper)}
             >
               {selectedColor.상세이미지링크.map((img, index) => (
@@ -139,6 +139,7 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
                 </SwiperSlide>
               ))}
             </Swiper>
+
             {/* 색상 옵션 버튼 (Announcing T-Shirt 전용) */}
             {selectedItem.옵션.length > 1 && (
               <div className="flex justify-center gap-2">

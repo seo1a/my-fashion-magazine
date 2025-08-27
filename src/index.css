@@ -14,3 +14,27 @@ body {
   font-family: 'noto-sans';
   src: url('/assets/NotoSansKR-Regular.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'freesentation-regular';
+  src: url('../src/assets/Freesentation-4Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'freesentation-bold';
+  src: url('../src/assets/Freesentation-7Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'poppins';
+  src: url('/assets/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'poppins-black';
+  src: url('/assets/Poppins-Black.ttf') format('truetype');
+}
+
+.highlight {
+    color: #ff2e8f; /* ⬇⬇⬇SCROLL DOWN⬇⬇⬇ 부분에 빨간색 적용 */
+}

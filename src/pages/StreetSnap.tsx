@@ -19,12 +19,12 @@ export default function StreetSnap() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-screen bg-black">
       <Navigation />
-      <main className="flex-1 ml-[150px] px-4 py-16">
-        <h1 className="text-6xl font-bold text-center mb-24">SNAP</h1>
+      <main className="flex-1 ml-[150px] px-4 py-16 bg-black font-noto_sans">
+        <h1 className="text-7xl font-bold text-center text-white mt-8 mb-28">SNAP</h1>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-40">
           <div className="grid grid-cols-3 gap-3">
             {snaps.map((snap, idx) => (
               <div

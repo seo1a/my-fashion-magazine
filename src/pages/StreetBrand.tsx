@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useNavigate } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import BrandNavigation from "../components/BrandNavigation";
 
@@ -23,6 +24,7 @@ export default function StreetBrand() {
   const trackRef = useRef<HTMLDivElement>(null);
   const brandRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [brandData, setBrandData] = useState<Brand[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("/data.json")
@@ -80,43 +82,67 @@ export default function StreetBrand() {
   useLayoutEffect(() => {
     const wrapper = wrapperRef.current;
     const track = trackRef.current;
-
     if (!wrapper || !track) return;
 
-    gsap.set(track, { x: 0 });
+    const updateScroll = () => {
+      const marginLeft = 150;
+      const scrollWidth = track.scrollWidth;
+      const viewportWidth = window.innerWidth - marginLeft;
+      const scrollLength = scrollWidth - viewportWidth;
+      const extraOffset = 300;
+      const totalScrollLength = scrollLength + extraOffset;
 
-    const scrollWidth = track.scrollWidth;
-    const viewportWidth = window.innerWidth - 150;
-    const scrollLength = scrollWidth - viewportWidth;
+      console.log({ scrollWidth, viewportWidth, scrollLength, totalScrollLength }); // 디버깅용
 
-    gsap.to(track, {
-      x: -scrollLength,
-      ease: "none",
-      scrollTrigger: {
-        trigger: wrapper,
-        start: "top top",
-        end: () => `+=${scrollLength}`,
-        scrub: 0.5,
-        pin: true,
-        anticipatePin: 1,
-        markers: true,
-      },
-    });
+      gsap.set(track, { x: 0 });
+      gsap.to(track, {
+        x: -scrollLength,
+        ease: "none",
+        scrollTrigger: {
+          trigger: wrapper,
+          start: "top top",
+          end: totalScrollLength,
+          scrub: 0.5,
+          pin: true,
+          anticipatePin: 1,
+          markers: true, 
+          onLeave: () => {
+            navigate("/street/item");
+          },
+        },
+      });
 
+      ScrollTrigger.refresh();
+    };
+
+    // 미디어 로딩 완료 후 스크롤 업데이트
     const mediaElements = track.querySelectorAll("img, video");
-    const loadHandler = () => ScrollTrigger.refresh();
-    mediaElements.forEach((el) => {
-      el.addEventListener("load", loadHandler);
-      el.addEventListener("error", loadHandler);
-    });
+    let loadedCount = 0;
+    const totalMedia = mediaElements.length;
+
+    const loadHandler = () => {
+      loadedCount++;
+      if (loadedCount === totalMedia) {
+        updateScroll(); // 모든 미디어가 로드된 후 실행
+      }
+    };
+
+    if (totalMedia === 0) {
+      updateScroll(); // 미디어가 없으면 즉시 실행
+    } else {
+      mediaElements.forEach((el) => {
+        el.addEventListener("load", loadHandler);
+        el.addEventListener("error", loadHandler);
+      });
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, []);
+  }, [navigate]);
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-screen bg-black">
       <Navigation />
       <BrandNavigation
         brands={brandData.map((brand) => brand.name)}

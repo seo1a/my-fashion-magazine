@@ -6,11 +6,11 @@ interface BrandNavigationProps {
 }
 
 const BrandNavigation: FC<BrandNavigationProps> = ({ brands, scrollToBrand }) => {
-  // 7개 버튼 생성, 브랜드 데이터가 없으면 빈 버튼 표시
+  // 6개 버튼 생성, 브랜드 데이터가 없으면 빈 버튼 표시
   const brandNames = [
     ...brands,
-    ...Array(7 - brands.length).fill("Placeholder"),
-  ].slice(0, 7);
+    ...Array(6 - brands.length).fill("Placeholder"),
+  ].slice(0, 6);
 
   return (
     <div className="fixed top-4 right-4 flex space-x-4 z-20">
