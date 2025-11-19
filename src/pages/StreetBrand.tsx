@@ -24,7 +24,7 @@ export default function StreetBrand() {
   const brandRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [brandData, setBrandData] = useState<Brand[]>([]);
   const navigate = useNavigate();
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
   const touchStartX = useRef<number>(0);
   const touchStartY = useRef<number>(0);
   const isScrolling = useRef<boolean>(false);
@@ -37,7 +37,7 @@ export default function StreetBrand() {
   useEffect(() => {
     const handleResize = () => {
       const wasMobile = isMobile;
-      const nowMobile = window.innerWidth < 768;
+      const nowMobile = window.innerWidth < 640;
       setIsMobile(nowMobile);
 
       // 모바일/PC 전환 시 track 위치 초기화
