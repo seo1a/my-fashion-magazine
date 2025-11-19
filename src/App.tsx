@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import data from "../public/data.json"
-import Home from './pages/Home'
 import Street from './pages/Street';
 import StreetBrand from './pages/StreetBrand';
 import StreetItem from './pages/StreetItem';
