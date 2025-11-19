@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import streetImg from "../assets/street_look.jpg"
@@ -119,7 +119,10 @@ export default function Home() {
     return () => ctx.revert();
   }, []);
 
-  const getCircleSize = (popularity: number) => Math.min(500, popularity) * 4;
+  const getCircleSize = (popularity: number, isMobile: boolean) => {
+    const baseSize = Math.min(500, popularity) * 4;
+    return isMobile ? baseSize * 0.4 : baseSize;
+  };
 
   const positions = [
     { left: 20, top: 18 },    // #y2k
@@ -132,6 +135,16 @@ export default function Home() {
     { left: 65, top: 70 },    // #프레피룩
   ];
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div
       ref={containerRef}
@@ -139,7 +152,7 @@ export default function Home() {
     >
       {trends.map((trend, index) => {
         const { left, top } = positions[index];
-        const size = getCircleSize(trend.popularity);
+        const size = getCircleSize(trend.popularity, isMobile);
         const backgroundStyle = trend.backgroundImage
           ? { backgroundImage: `url(${trend.backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }
           : {};
@@ -148,7 +161,7 @@ export default function Home() {
           <div
             key={index}
             id={`circle-${index}`}
-            className="absolute flex items-center justify-center rounded-full border border-black text-xl text-white font-noto_sans transform origin-center cursor-pointer overflow-hidden" // 오버플로우 제한
+            className="absolute flex items-center justify-center rounded-full border border-black text-xs sm:text-sm md:text-base lg:text-xl text-white font-noto_sans transform origin-center cursor-pointer overflow-hidden"
             style={{
               left: `${left}%`,
               top: `${top}%`,
@@ -173,20 +186,20 @@ export default function Home() {
                   style={{
                     ...backgroundStyle,
                     transformOrigin: 'center',
-                    zIndex: -2, // 배경 이미지 아래로
+                    zIndex: -2,
                   }}
                 />
                 <div
                   id={`overlay-${index}`}
                   className="absolute inset-0 rounded-full bg-black"
                   style={{
-                    opacity: 0.45, // 60% 불투명도
-                    zIndex: -1, // 배경 이미지 위, 텍스트 아래
+                    opacity: 0.45,
+                    zIndex: -1,
                   }}
                 />
               </>
             ) : null}
-            {trend.hashtag}
+            <span className="px-2 text-center break-words">{trend.hashtag}</span>
           </div>
         );
       })}

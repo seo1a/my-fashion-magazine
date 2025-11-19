@@ -111,15 +111,15 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-black font-noto_sans text-white pt-24">
+    <div className="w-full min-h-screen bg-black font-noto_sans text-white pt-16 sm:pt-20 md:pt-24">
       <Navigation />
-      <div className="mx-auto max-w-6xl px-4 py-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 py-4 sm:py-6 md:py-8">
 
-        <p className='text-center text-3xl font-poppins font-bold mt-4 mb-20 tracking-wider'>
-          Recommended items for your <span className="text-myGreen text-5xl font-aftermath font-light tracking-widest">cool</span> street fashion
+        <p className='text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-poppins font-bold mt-2 sm:mt-4 mb-8 sm:mb-12 md:mb-20 tracking-wider'>
+          Recommended items for your <span className="text-myGreen text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-aftermath font-light tracking-widest">cool</span> street fashion
         </p>
         {/* 아이템 선택 버튼 */}
-        <div className="flex flex-wrap justify-center gap-8 mt-4 mb-4">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-2 sm:mt-4 mb-2 sm:mb-4">
           {items.map((item) => (
             <button
               key={item.제품명}
@@ -127,7 +127,7 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
                 setSelectedItem(item);
                 setSelectedColor(item.옵션[0]);
               }}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                 selectedItem.제품명 === item.제품명
                   ? 'bg-white text-black'
                   : 'bg-myGreen text-black hover:bg-gray-300'
@@ -139,7 +139,7 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
         </div>
 
         {/* 아이템 상세: Swiper 슬라이더 */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
           <div className="w-full max-w-4xl">
             <Swiper
               modules={[SwiperNavigation, Pagination]}
@@ -147,16 +147,16 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
               pagination={{ 
                 clickable: true
               }}
-              spaceBetween={30}
+              spaceBetween={20}
               slidesPerView={1}
               speed={800}
-              className="w-full h-[60vh] md:h-[70vh] mobile:w-[60vw] mt-20 swiper-pagination-custom"
+              className="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] mt-8 sm:mt-12 md:mt-20 swiper-pagination-custom"
               onSwiper={(swiper) => (swiperRef.current = swiper)}
             >
               {selectedColor.상세이미지링크.map((img, index) => (
                 <SwiperSlide key={index} className="transition-opacity duration-300 ease-in-out relative group">
                   <div className="inline-flex overflow-hidden w-full justify-center">
-                    <div className="relative flex h-full w-full max-w-[550px] select-none items-center justify-center bg-transparent">
+                    <div className="relative flex h-full w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[550px] select-none items-center justify-center bg-transparent">
                       <img
                         src={img}
                         alt={`${selectedItem.제품명} - ${selectedColor.색상} - ${index + 1}`}
@@ -164,7 +164,7 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
-                        <span className="text-myGreen text-center text-lg font-bold">{selectedItem.제품명}</span>
+                        <span className="text-myGreen text-center text-sm sm:text-base md:text-lg font-bold">{selectedItem.제품명}</span>
                       </div>
                     </div>
                   </div>
@@ -174,7 +174,7 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
 
             {/* 색상 옵션 버튼 */}
             {selectedItem.옵션.length > 1 && (
-              <div className="flex justify-center gap-3">
+              <div className="flex justify-center gap-2 sm:gap-3 mt-2 sm:mt-4">
                 {selectedItem.옵션.map((option) => {
                   // 조합 색상인지 확인
                   const splitColors = splitColorMap[option.색상];
@@ -187,7 +187,7 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
                     <button
                       key={option.색상}
                       onClick={() => handleColorChange(option)}
-                      className={`w-10 h-10 rounded-full border transition-all overflow-hidden relative ${
+                      className={`w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full border transition-all overflow-hidden relative ${
                         selectedColor.색상 === option.색상
                           ? 'border-white scale-110'
                           : 'border-gray-500 hover:border-gray-300'

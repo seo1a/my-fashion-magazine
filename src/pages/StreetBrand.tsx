@@ -95,9 +95,9 @@ export default function StreetBrand() {
           // mouseenter: 이미지 확대
           element.addEventListener('mouseenter', () => {
             gsap.to(mediaElement, {
-              scale: 1.1,
-              duration: 0.5,
-              ease: "linear",
+              scale: 1.3,
+              duration: 0.6,
+              ease: 'power2.out',
             });
           });
 
@@ -105,8 +105,8 @@ export default function StreetBrand() {
           element.addEventListener('mouseleave', () => {
             gsap.to(mediaElement, {
               scale: 1,
-              duration: 0.1,
-              ease: 'power1.out',
+              duration: 0.5,
+              ease: 'power2.out',
             });
           });
         });
@@ -200,7 +200,7 @@ export default function StreetBrand() {
   }, [navigate, brandData]);
 
   return (
-    <div className="relative w-full min-h-screen bg-black pt-24 text-white">
+    <div className="relative w-full h-screen bg-black text-white overflow-hidden">
       <Navigation />
       <BrandNavigation
         brands={brandData.map((b) => b.name)}
@@ -208,25 +208,26 @@ export default function StreetBrand() {
       />
       <section
         ref={wrapperRef}
-        className="relative h-screen w-full overflow-hidden bg-black ml-12"
+        className="relative w-full overflow-hidden bg-black"
+        style={{ height: 'calc(100vh - 64px)' }} // 모바일 네비게이션 높이
       >
         <div ref={trackRef} className="flex h-full w-[2150vw] gallery-track">
           {brandData.map((brand, brandIndex) => (
-            <div key={brandIndex} className="flex mr-52">
+            <div key={brandIndex} className="flex mr-8 sm:mr-16 md:mr-32 lg:mr-52">
               <div
-                className="w-[500px] flex flex-col items-center justify-center font-noto_sans mx-28"
+                className="w-[250px] sm:w-[350px] md:w-[450px] lg:w-[500px] flex flex-col items-center justify-center font-noto_sans mx-4 sm:mx-8 md:mx-16 lg:mx-28"
                 ref={(el) => {
                   brandRefs.current[brandIndex] = el
                 }}
               >
-                <div className="text-center text-gray-800 p-4 bg-black">
+                <div className="text-center text-gray-800 p-2 sm:p-4 bg-black">
                   {brand.logo && (
                     <img
                       src={brand.logo}
-                      className="pt-10 mb-4 w-[200px] h-auto mx-auto"
+                      className="pt-4 sm:pt-6 md:pt-10 mb-2 sm:mb-4 w-[100px] sm:w-[150px] md:w-[200px] h-auto mx-auto"
                     />
                   )}
-                  <p className="text-base text-white pt-8 px-16 pb-12 z-10">
+                  <p className="text-xs sm:text-sm md:text-base text-white pt-4 sm:pt-6 md:pt-8 px-4 sm:px-8 md:px-12 lg:px-16 pb-6 sm:pb-8 md:pb-12 z-10">
                     {brand.description}
                   </p>
                 </div>
@@ -235,7 +236,7 @@ export default function StreetBrand() {
                 <div
                   key={`${brandIndex}-${index}`}
                   id={`brand-image-${brandIndex}-${index}`}
-                  className={`w-[580px] h-auto mx-32 flex items-center justify-center overflow-hidden cursor-pointer ${
+                  className={`w-[200px] sm:w-[300px] md:w-[400px] lg:w-[580px] h-auto mx-4 sm:mx-8 md:mx-16 lg:mx-32 flex items-center justify-center overflow-hidden cursor-pointer ${
                     index % 2 === 0 ? "self-start" : "self-end"
                   }`}
                 >
