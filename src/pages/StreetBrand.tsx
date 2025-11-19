@@ -24,10 +24,39 @@ export default function StreetBrand() {
   const brandRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [brandData, setBrandData] = useState<Brand[]>([]);
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const touchStartX = useRef<number>(0);
+  const touchStartY = useRef<number>(0);
+  const isScrolling = useRef<boolean>(false);
 
   // 🔧 끝을 살짝 더 보여주기 위한 패딩(px)
   const END_PAD = 100;
   const navigatedRef = useRef(false);
+
+  // 모바일/데스크톱 감지
+  useEffect(() => {
+    const handleResize = () => {
+      const wasMobile = isMobile;
+      const nowMobile = window.innerWidth < 768;
+      setIsMobile(nowMobile);
+
+      // 모바일/PC 전환 시 track 위치 초기화
+      if (trackRef.current && wasMobile !== nowMobile) {
+        if (nowMobile) {
+          // PC -> 모바일: transform 제거하고 scrollLeft로 전환
+          gsap.set(trackRef.current, { x: 0 });
+          trackRef.current.scrollLeft = 0;
+        } else {
+          // 모바일 -> PC: scrollLeft 초기화
+          if (trackRef.current) {
+            trackRef.current.scrollLeft = 0;
+          }
+        }
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMobile]);
 
   useEffect(() => {
     fetch("/data.json")
@@ -64,19 +93,28 @@ export default function StreetBrand() {
       return;
     }
 
-    const marginLeft = 0;
-    const scrollWidth = track.scrollWidth;
-    const viewportWidth = window.innerWidth - marginLeft;
+    if (isMobile) {
+      // 모바일: track을 직접 스크롤
+      const brandLeft = brand.offsetLeft;
+      track.scrollTo({
+        left: brandLeft,
+        behavior: 'smooth'
+      });
+    } else {
+      // PC: 세로 스크롤로 제어
+      const marginLeft = 0;
+      const scrollWidth = track.scrollWidth;
+      const viewportWidth = window.innerWidth - marginLeft;
 
-    const scrollLength = scrollWidth - viewportWidth;          // 가로 실제 이동 길이
-    const totalScrollLength = scrollLength + END_PAD;          // 세로 스크롤 길이(패드 포함)
+      const scrollLength = scrollWidth - viewportWidth;
+      const totalScrollLength = scrollLength + END_PAD;
 
-    const brandLeft = brand.offsetLeft - marginLeft;           // 왼쪽 기준선 보정
-    const ratio = Math.max(0, Math.min(1, brandLeft / scrollLength));
-    const targetScrollTop = ratio * totalScrollLength;
+      const brandLeft = brand.offsetLeft - marginLeft;
+      const ratio = Math.max(0, Math.min(1, brandLeft / scrollLength));
+      const targetScrollTop = ratio * totalScrollLength;
 
-    console.log("scrollToBrand 실행:", { index, brandLeft, ratio, targetScrollTop });
-    window.scrollTo({ top: targetScrollTop, behavior: "smooth" });
+      window.scrollTo({ top: targetScrollTop, behavior: "smooth" });
+    }
   };
 
   // 이미지 hover 효과 설정
@@ -116,7 +154,69 @@ export default function StreetBrand() {
     return () => ctx.revert();
   }, [brandData]);
 
+  // 모바일: 터치 스와이프 처리
+  useEffect(() => {
+    if (!isMobile || !trackRef.current || brandData.length === 0) return;
+
+    const track = trackRef.current;
+    let scrollPosition = 0;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartX.current = e.touches[0].clientX;
+      touchStartY.current = e.touches[0].clientY;
+      scrollPosition = track.scrollLeft;
+      isScrolling.current = false;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!touchStartX.current || !touchStartY.current) return;
+
+      const touchX = e.touches[0].clientX;
+      const touchY = e.touches[0].clientY;
+      const diffX = touchStartX.current - touchX;
+      const diffY = touchStartY.current - touchY;
+
+      // 가로 스와이프인지 확인 (가로 이동이 세로 이동보다 클 때)
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 10) {
+        isScrolling.current = true;
+        e.preventDefault(); // 세로 스크롤 방지
+        track.scrollLeft = scrollPosition + diffX;
+      }
+    };
+
+    const handleTouchEnd = () => {
+      touchStartX.current = 0;
+      touchStartY.current = 0;
+    };
+
+    // 끝에 도달했는지 확인
+    const checkEnd = () => {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (track.scrollLeft >= maxScroll - 50 && !navigatedRef.current) {
+        navigatedRef.current = true;
+        setTimeout(() => {
+          navigate("/street/item");
+        }, 500);
+      }
+    };
+
+    track.addEventListener('touchstart', handleTouchStart, { passive: false });
+    track.addEventListener('touchmove', handleTouchMove, { passive: false });
+    track.addEventListener('touchend', handleTouchEnd);
+    track.addEventListener('scroll', checkEnd);
+
+    return () => {
+      track.removeEventListener('touchstart', handleTouchStart);
+      track.removeEventListener('touchmove', handleTouchMove);
+      track.removeEventListener('touchend', handleTouchEnd);
+      track.removeEventListener('scroll', checkEnd);
+    };
+  }, [isMobile, brandData, navigate]);
+
+  // PC: ScrollTrigger 설정
   useLayoutEffect(() => {
+    if (isMobile) return; // 모바일에서는 ScrollTrigger 사용 안 함
+
     const wrapper = wrapperRef.current;
     const track = trackRef.current;
     if (!wrapper || !track || brandData.length === 0) return;
@@ -133,9 +233,6 @@ export default function StreetBrand() {
     const viewportWidth = window.innerWidth - marginLeft;
     const scrollLength = scrollWidth - viewportWidth;
 
-    // 디버깅: 값 확인
-    console.log("ScrollTrigger 초기화:", { scrollWidth, viewportWidth, scrollLength });
-
     const tween = gsap.to(track, {
       x: -scrollLength,
       ease: "none",
@@ -145,13 +242,12 @@ export default function StreetBrand() {
       trigger: wrapper,
       animation: tween,
       start: "top top",
-      end: `+=${scrollLength + END_PAD}`, // 패딩 포함
+      end: `+=${scrollLength + END_PAD}`,
       scrub: 0.5,
       pin: true,
       anticipatePin: 1,
-      markers: true, // true로 유지하되 CSS로 숨김
+      markers: true,
 
-      // ✅ onLeave 대신: 끝에 도달(prog≈1) & 앞으로 스크롤일 때 한 번만 이동
       onUpdate: (self) => {
         if (!navigatedRef.current && self.direction === 1 && self.progress > 0.98) {
           navigatedRef.current = true;
@@ -159,33 +255,15 @@ export default function StreetBrand() {
         }
       },
 
-      // 뒤로 당겼을 땐 다시 활성화 (필요 시)
       onEnterBack: () => {
         navigatedRef.current = false;
       },
     });
 
-    // ScrollTrigger가 제대로 작동하는지 확인
-    console.log("ScrollTrigger 상태:", {
-      isActive: st.isActive,
-      start: st.start,
-      end: st.end,
-      progress: st.progress,
-      direction: st.direction,
-      animation: st.animation
-    });
-
-    // 약간의 지연 후 refresh (레이아웃 안정화 대기)
     const refreshTimer = setTimeout(() => {
       ScrollTrigger.refresh();
-      console.log("ScrollTrigger refresh 후:", {
-        isActive: st.isActive,
-        progress: st.progress,
-        animation: st.animation?.progress()
-      });
     }, 100);
 
-    // 리사이즈 시에도 길이 재계산(옵션)
     const onResize = () => {
       st.refresh();
     };
@@ -197,7 +275,7 @@ export default function StreetBrand() {
       st.kill();
       tween.kill();
     };
-  }, [navigate, brandData]);
+  }, [navigate, brandData, isMobile]);
 
   return (
     <div className="relative w-full h-screen bg-black text-white overflow-hidden">
@@ -209,13 +287,27 @@ export default function StreetBrand() {
       <section
         ref={wrapperRef}
         className="relative w-full overflow-hidden bg-black"
-        style={{ height: 'calc(100vh - 64px)' }} // 모바일 네비게이션 높이
+        style={{ height: 'calc(100vh - 64px)' }}
       >
-        <div ref={trackRef} className="flex h-full w-[2150vw] gallery-track">
+        <div 
+          ref={trackRef} 
+          className={`flex h-full w-[2150vw] gallery-track ${
+            isMobile ? 'overflow-x-auto overflow-y-hidden snap-x snap-mandatory' : ''
+          }`}
+          style={isMobile ? { 
+            WebkitOverflowScrolling: 'touch',
+            scrollBehavior: 'smooth'
+          } : {}}
+        >
           {brandData.map((brand, brandIndex) => (
-            <div key={brandIndex} className="flex mr-8 sm:mr-16 md:mr-32 lg:mr-52">
+            <div 
+              key={brandIndex} 
+              className={`flex mr-8 sm:mr-16 md:mr-32 lg:mr-52 ${
+                isMobile ? 'snap-start flex-shrink-0' : ''
+              }`}
+            >
               <div
-                className="w-[250px] sm:w-[350px] md:w-[450px] lg:w-[500px] flex flex-col items-center justify-center font-noto_sans mx-4 sm:mx-8 md:mx-16 lg:mx-28"
+                className="w-[250px] sm:w-[350px] md:w-[450px] lg:w-[500px] flex flex-col items-center justify-center font-noto_sans mx-12 sm:mx-12 md:mx-16 lg:mx-28"
                 ref={(el) => {
                   brandRefs.current[brandIndex] = el
                 }}
@@ -236,7 +328,7 @@ export default function StreetBrand() {
                 <div
                   key={`${brandIndex}-${index}`}
                   id={`brand-image-${brandIndex}-${index}`}
-                  className={`w-[200px] sm:w-[300px] md:w-[400px] lg:w-[580px] h-auto mx-4 sm:mx-8 md:mx-16 lg:mx-32 flex items-center justify-center overflow-hidden cursor-pointer ${
+                  className={`w-[300px] sm:w-[300px] md:w-[400px] lg:w-[580px] h-auto mx-12 sm:mx-12 md:mx-16 lg:mx-32 flex items-center justify-center overflow-hidden cursor-pointer ${
                     index % 2 === 0 ? "self-start" : "self-end"
                   }`}
                 >
