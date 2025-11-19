@@ -13,15 +13,22 @@ const BrandNavigation: FC<BrandNavigationProps> = ({ brands, scrollToBrand }) =>
   ].slice(0, 6);
 
   return (
-    <div className="fixed top-4 right-4 flex space-x-4 z-20">
+    <div className="fixed top-24 right-8 flex space-x-4 z-20">
       {brandNames.map((name, index) => (
         <button
           key={index}
-          className="w-6 h-6 rounded-full bg-gray-300 hover:bg-gray-500 text-white flex items-center justify-center text-xs"
           onClick={() => scrollToBrand(index)}
           disabled={name === "Placeholder"}
+          className={`w-6 h-8 flex items-center justify-center
+            text-myGreen text-2xl font-poppins_black
+            transition-all duration-300
+            ${
+              name === "Placeholder"
+                ? "opacity-40 cursor-default"
+                : "hover:text-white"
+            }`}
         >
-          
+          {index + 1}
         </button>
       ))}
     </div>

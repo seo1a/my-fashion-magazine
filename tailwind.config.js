@@ -11,7 +11,12 @@ export default {
         poppins_black: ['poppins-black', 'sans-serif'],
         freesentation: ['freesentation-regular', 'sans-serif'],
         freesentation_bold: ['freesentation-bold', 'sans-serif'],
+        aftermath: ['aftermath', 'sans-serif'],
       },
+      colors: {
+        myBlue: "#4246ce",
+        myGreen: "#00FF57"
+      }
     },
   },
   plugins: [],

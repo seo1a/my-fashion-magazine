@@ -35,6 +35,15 @@ body {
   src: url('/assets/Poppins-Black.ttf') format('truetype');
 }
 
-.highlight {
-    color: #ff2e8f; /* ⬇⬇⬇SCROLL DOWN⬇⬇⬇ 부분에 빨간색 적용 */
+@font-face {
+  font-family: 'aftermath';
+  src: url('/assets/aftermath.ttf') format('truetype');
 }
+
+/* ScrollTrigger 마커 숨기기 - opacity만 사용하여 레이어 구조는 유지 */
+.gsap-marker,
+[class*="gsap-marker"] {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+

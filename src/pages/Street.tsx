@@ -1,85 +1,299 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import gsap from 'gsap';
-import Navigation from '../components/Navigation';
+import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import Navigation from "../components/Navigation";
+import "../styles/Street.css"; // 추가된 CSS
 
 interface FashionData {
-    설명: string;
-    패션이미지링크: string[];
-    스냅이미지링크: string[];
+  설명: string;
+  패션이미지링크: string[];
 }
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Street() {
-    const [streetData, setStreetData] = useState<FashionData | null>(null);
-    const navigate = useNavigate();
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const lastSectionRef = useRef<HTMLElement | null>(null); // 마지막 문구 ref
+  const [streetData, setStreetData] = useState<FashionData | null>(null);
+  const navigate = useNavigate();
+  const svgRef = useRef<SVGSVGElement | null>(null);
 
-    useEffect(() => {
-        fetch('/data.json')
-            .then(res => res.json())
-            .then(data => {
-                if (data && data["스트릿"]) {
-                    setStreetData(data["스트릿"]);
-                }
-            })
-            .catch(err => {
-                console.error("JSON fetch error:", err);
+  // 설명을 문장 단위로 쪼갬 (headline 제외)
+  const sentences = streetData?.설명
+    ? streetData.설명.split(/(?<=[.!?])\s+/)
+    : ["로딩 중..."];
+
+  useEffect(() => {
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data["스트릿"]) {
+          setStreetData(data["스트릿"]);
+        }
+      })
+      .catch((err) => {
+        console.error("JSON fetch error:", err);
+      });
+  }, []);
+
+  // 스크롤 시 /street/brand로 이동
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      if (scrollTop + windowHeight >= documentHeight - 10) {
+        navigate("/street/brand");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [navigate]);
+
+  useEffect(() => {
+    if (!svgRef.current) return;
+
+    const turb = svgRef.current.querySelector('#turb') as SVGElement | null;
+    const disp = svgRef.current.querySelector('#disp') as SVGElement | null;
+
+    if (!turb || !disp) return;
+
+    // 🎬 초기 텍스트 애니메이션 (URBAN / VIBE / EDGE)
+    const tl = gsap.timeline({ defaults: { ease: "sine.inOut" } });
+
+    tl.to(turb, {
+      attr: { baseFrequency: "0.03 0.02" },
+      duration: 3,
+    })
+      .to(disp, {
+        attr: { scale: 40 },
+        duration: 1.5,
+      }, "<")
+      .to(turb, {
+        attr: { baseFrequency: "0.02 0.04" },
+        duration: 3,
+      })
+      .to(disp, {
+        attr: { scale: 18 },
+        duration: 1.5,
+      }, "<");
+
+    // 글자 등장 → 사라짐
+    gsap.fromTo('.svg-word', { opacity: 0, y: 30, scale: 0.98 }, {
+      opacity: 1, y: 0, scale: 1,
+      stagger: 0.45,
+      duration: 1.2,
+      ease: 'power3.out',
+      onComplete: () => {
+        gsap.to('.svg-word', {
+          opacity: 0,
+          duration: 1.5,
+          delay: 0.8,
+          onComplete: () => {
+            // ✨ STREET FASHION 등장
+            gsap.to('.final-word', {
+              opacity: 1,
+              scale: 1,
+              duration: 1.8,
+              ease: "power3.out",
+              onComplete: () => {
+                // 물결 효과
+                const tl2 = gsap.timeline({ repeat: 0, defaults: { ease: "sine.inOut" } });
+                tl2.to(turb, { attr: { baseFrequency: "0.035 0.025" }, duration: 2 })
+                  .to(disp, { attr: { scale: 20 }, duration: 1.5 }, "<");
+                tl2.eventCallback("onComplete", () => {
+                  gsap.to(turb, { attr: { baseFrequency: "0 0" }, duration: 1.2 });
+                  gsap.to(disp, { attr: { scale: 0 }, duration: 1.2 });
+                });
+              }
             });
-    }, []);
+          }
+        });
+      }
+    });
 
-    // ✅ 스크롤 시 /street/brand로 이동
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop = window.scrollY;
-            const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight;
+    return () => {
+      tl.kill();
+      gsap.killTweensOf(turb);
+      gsap.killTweensOf(disp);
+    };
+  }, []);
 
-            if (scrollTop + windowHeight >= documentHeight - 10) {
-                navigate('/street/brand');
-            }
-        };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [navigate]);
 
-    return (
-        <div className="relative w-full min-h-[150vh] bg-gray-100">
-            {/* Navigation 고정 */}
-            <div className="flex">
-                <Navigation />
 
-                {/* 왼쪽 설명글 영역 */}
-                <div className="w-[35%] flex flex-col items-center justify-center font-noto_sans ml-36">
-                    <div className="text-center text-gray-800 p-4 bg-white ml-40 mt-40">
-                        <h2 className="text-3xl font-bold pt-10 mb-4">스트릿 패션</h2>
-                        <p className="text-base pt-8 pb-12 px-12">
-                            {streetData?.설명 || "로딩 중..."}
-                        </p>
-                    </div>
+
+  // 중간의 이미지+문구
+  useEffect(() => {
+    const hide = (item: Element) => {
+      gsap.set(item, { autoAlpha: 0 });
+    };
+
+    const animate = (item: HTMLElement) => {
+      let x = 100;
+      let y = 0;
+      let delay = parseFloat(item.dataset.delay || "0");
+
+      if (item.classList.contains("reveal_LTR")) {
+        x = -100;
+      } else if (item.classList.contains("reveal_RTL")) {
+        x = 100;
+      }
+
+      gsap.fromTo(
+        item,
+        { autoAlpha: 0, x, y },
+        {
+          autoAlpha: 1,
+          x: 0,
+          y: 0,
+          delay,
+          duration: 1.25,
+          overwrite: "auto",
+        }
+      );
+    };
+
+    gsap.utils.toArray<HTMLElement>(".reveal").forEach((item) => {
+      hide(item);
+      ScrollTrigger.create({
+        trigger: item,
+        start: "top 80%",
+        end: "bottom top",
+        onEnter: () => animate(item),
+      });
+    });
+  }, [sentences]);
+
+
+  return (
+    <div className="relative w-full min-h-[150vh] bg-black text-white pt-4">
+      <Navigation />
+
+      {/* 설명글 영역 */}
+      <div
+        ref={containerRef}
+        className="relative w-full bg-black min-h-screen"
+      >
+        {/* headline (URBAN / VIBE / EDGE) */}
+        <section className="headline-container px-6 md:px-12" aria-hidden>
+            {/* inline SVG definitions + text. React-friendly 방식 */}
+            <svg className="headline-svg" width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" ref={svgRef}>
+              <defs>
+                {/* 컬러 그라데이션 */}
+                <linearGradient id="neonGrad" x1="0" x2="1">
+                  <stop offset="0%" stopColor="#FF6EDB" />
+                  <stop offset="50%" stopColor="#00FF57" />
+                  <stop offset="100%" stopColor="#9BFFEA" />  
+                </linearGradient>
+
+              
+                <linearGradient id="finalGrad" x1="0" x2="1">
+                  <stop offset="0%" stopColor="#00FF57" />
+                  <stop offset="50%" stopColor="#00FF57" />
+                  <stop offset="100%" stopColor="#00FF57" />
+                </linearGradient>
+
+                {/* wavy filter */}
+                <filter id="wavy" x="-20%" y="-20%" width="140%" height="140%">
+                  <feTurbulence id="turb" baseFrequency="0.02 0.03" numOctaves="2" seed="2" result="noise" />
+                  <feDisplacementMap id="disp" in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G" />
+                
+                  <feGaussianBlur stdDeviation="0.2" result="blurred" />
+                  <feComposite in="SourceGraphic" in2="blurred" operator="atop" />
+                </filter>
+
+                {/* 약한 외곽 글로우 (svg용) */}
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="6" result="coloredBlur" />
+                  <feMerge>
+                    <feMergeNode in="coloredBlur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              {/* 텍스트 그룹 — 화면 중앙 정렬. font-size는 viewBox 기준이며 CSS에서 반응형으로 조정 */}
+              <g transform="translate(600,180)" textAnchor="middle" style={{ filter: 'url(#wavy) url(#glow)' }}>
+                <text className="svg-word" y="0" x="0" fill="url(#neonGrad)" fontWeight="900">URBAN</text>
+                <text className="svg-word" y="160" x="0" fill="url(#neonGrad)" fontWeight="900">VIBE</text>
+                <text className="svg-word" y="320" x="0" fill="url(#neonGrad)" fontWeight="900">EDGE</text>
+              </g>
+              <g transform="translate(600,180)" textAnchor="middle" style={{ filter: 'url(#wavy)' }}>
+                <text
+                  className="final-word"
+                  y="160"
+                  x="0"
+                  fill="url(#finalGrad)"
+                  fontWeight="400"
+                  style={{ opacity: 0, transformOrigin: "center", scale: 1 }}
+                >
+                  Street Fashion
+                </text>
+              </g>
+            </svg>
+        </section>
+
+        <div className="px-6 md:px-12">
+          {/* 나머지 문장 */}
+          {sentences.map((sentence, idx) => {
+            const imgSrc =
+              streetData?.패션이미지링크[idx % streetData.패션이미지링크.length];
+
+            // 방향 설정
+            const textDirection = idx % 2 === 0 ? "reveal_LTR" : "reveal_RTL";
+            const imgDirection = idx % 2 === 0 ? "reveal_LTR" : "reveal_RTL";
+
+            return (
+              <section
+                key={idx}
+                className="relative w-full my-[30vh] h-[800px] flex items-center"
+              >
+                {/* 이미지 (배경처럼) */}
+                <figure
+                  className={`absolute top-0 w-3/5 h-full overflow-hidden ${
+                    idx % 2 === 0 ? "left-0" : "right-0"
+                  } ${imgDirection} reveal`}
+                >
+                  <img
+                    src={imgSrc}
+                    alt={`street-img-${idx}`}
+                    className="w-full h-full object-contain"
+                  />
+                </figure>
+
+                {/* 설명글 (오버레이) */}
+                <div
+                  className={`sentence relative z-10 text-2xl leading-relaxed font-freesentation text-white ${
+                    idx % 2 === 0 ? "mr-auto text-left pl-[650px]" : "ml-auto text-right pr-[650px]"
+                  } ${textDirection} reveal`}
+                >
+
+                  {/* 반투명 박스 */}
+                  <div className="absolute inset-0 bg-black/30 -z-10" />
+                  
+                  <p className="text-lg leading-relaxed font-freesentation text-white p-8 mx-12">
+                    {sentence.split("\n").map((line, lineIdx) => (
+                      <span key={lineIdx} className="block mb-2">
+                        {line}
+                      </span>
+                    ))}
+                  </p>
                 </div>
-            </div>
-
-            {/* 오른쪽 배경 이미지 영역 */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-                {streetData?.패션이미지링크?.[0] && (
-                    <div
-                        className="absolute right-20 top-1/6 w-[40%] h-full z-0"
-                        style={{
-                            backgroundImage: `url(${streetData.패션이미지링크[0]})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'top center',
-                            backgroundRepeat: 'no-repeat',
-                            opacity: 0.7,
-                        }}
-                    />
-                )}
-            </div>
-
-            {/* 👇 하단 여백 (스크롤 유도용) */}
-            <div className="h-[40vh]" />
-
+              </section>
+            );
+          })}
         </div>
-    );
+        
+      </div>
+
+      {/* 하단 여백 */}
+      <div className="h-[45vh]" />
+    </div>
+  );
 }

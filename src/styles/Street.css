@@ -1,40 +1,68 @@
-.text {
-  position: relative;   /* span이 이 영역을 기준으로 absolute 포지셔닝 */
-  display: inline-block;
-  letter-spacing: -0.01em;
-  line-height: 100%;
-  margin: 0;
-
+/* headline-container 전체 */
+.headline-container {
   width: 100%;
-  color: rgba(182, 182, 182, 0.2);
-  background: linear-gradient(to right, #b6b6b6, #b6b6b6) no-repeat;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-size: 0%;
-  transition: background-size cubic-bezier(.1, .5, .5, 1) 0.5s;
-
+  height: 100vh;
+  display: block;
+  background: #000;
   position: relative;
-  display: inline-block;
-}
-
-.text span {
-  top: 0;   /* 부모의 맨 위에 붙임 */
-  left: 0;  /* 부모의 맨 왼쪽에 붙임 */
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #4246ce;
-  color: #0D0D0D;
-
-  clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
-  transform-origin: center;
-  transition: all cubic-bezier(.1, .5, .5, 1) 0.4s;
-
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
-.text:hover > span {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+/* svg 반응형: viewBox를 사용하므로 width/height만 지정 */
+.headline-svg {
+  width: 100%;
+  height: 100%;
+  margin-left: 0;
+  display: block;
+  pointer-events: none; /* 선택 방지(선택 커서 방지) */
 }
+
+/* SVG 텍스트 스타일: 폰트는 프로젝트에 로드된 폰트 사용 */
+.svg-word {
+  font-family: "Poppins", sans-serif; 
+  font-weight: 900;
+  font-size: 100px; /* viewBox 기준, 반응형 보정 아래에서 처리 */
+  letter-spacing: 0.18em; /* 자간 넓히기 */
+  text-transform: uppercase;
+  fill-opacity: 1;
+  paint-order: stroke; /* 렌더 순서 안정화 */
+}
+
+.final-word {
+  font-family: "aftermath",'Poppins-Black';
+  font-weight: 400;
+  font-size: 95px; /* viewBox 기준, 반응형 보정 아래에서 처리 */
+  letter-spacing: 0.05em; /* 자간 넓히기 */
+  text-transform: uppercase;
+  fill-opacity: 1;
+  paint-order: stroke; /* 렌더 순서 안정화 */
+}
+
+/* 반응형 폰트 스케일: view width 기반으로 조절 */
+@media (min-width: 1200px) {
+  .svg-word { font-size: 130px; }
+}
+@media (max-width: 1199px) and (min-width: 800px) {
+  .svg-word { font-size: 100px; }
+}
+@media (max-width: 799px) {
+  .svg-word { font-size: 64px; }
+}
+
+@media (min-width: 1200px) {
+  .final-word { font-size: 100px; }
+}
+@media (max-width: 1199px) and (min-width: 800px) {
+  .final-word { font-size: 100px; }
+}
+@media (max-width: 799px) {
+  .final-word { font-size: 64px; }
+}
+
+/* 추가: 약한 내부 글로우 보정 (CSS) */
+.headline-container .svg-word { filter: drop-shadow(0 2px 8px rgba(0,255,120,0.08)); }
+
+/* 만약 사이드 네비게이션과 겹치는 문제 있으면 z-index 조절 */
+.headline-container { z-index: 1; }

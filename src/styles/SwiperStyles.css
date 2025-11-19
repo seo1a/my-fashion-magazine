@@ -15,6 +15,7 @@
   color: #D3D3D3 !important;
 }
 
+/* 기본 Swiper pagination 스타일 */
 .swiper-pagination-bullet-active {
   background-color: #666666 !important;
 }
@@ -24,4 +25,33 @@
 }
 .swiper-pagination {
   margin-top: 5px !important; 
+}
+
+/* StreetItem 컴포넌트용 커스텀 Pagination 스타일 */
+/* StreetItem 내부의 Swiper pagination만 스타일링 */
+.swiper.swiper-pagination-custom .swiper-pagination,
+.swiper .swiper-pagination {
+  position: relative !important;
+  bottom: auto !important;
+  margin-top: 20px !important;
+  text-align: center !important;
+}
+
+.swiper.swiper-pagination-custom .swiper-pagination-bullet,
+.swiper .swiper-pagination-bullet {
+  width: 8px !important;
+  height: 8px !important;
+  background-color: #666666 !important;
+  opacity: 0.5 !important;
+  margin: 0 4px !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.swiper.swiper-pagination-custom .swiper-pagination-bullet-active,
+.swiper .swiper-pagination-bullet-active {
+  background-color: #00FF78 !important; /* myGreen 색상 */
+  opacity: 1 !important;
+  width: 10px !important;
+  height: 10px !important;
 }

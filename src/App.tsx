@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import data from "../public/data.json"
 import Home from './pages/Home'
-import Street from './pages/Street'
-import Street2 from './pages/Street2';
+import Street from './pages/Street';
 import StreetBrand from './pages/StreetBrand';
 import StreetItem from './pages/StreetItem';
 import StreetSnap from './pages/StreetSnap';
@@ -16,9 +15,7 @@ function App() {
   return (
    <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-
-        <Route path="/street" element={<Street2 />} />
+        <Route path="/" element={<Street />} />
         <Route path="/street/brand" element={<StreetBrand />} />
         <Route path="/street/item" element={<StreetItem items={streetItems}/>}/>
         <Route path="/street/snap" element={<StreetSnap />} />

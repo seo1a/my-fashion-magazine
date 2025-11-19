@@ -36,9 +36,9 @@ export default function Modal({ imageSrc, onClose }: ModalProps) {
         <img src={imageSrc} alt="Snap" className="max-h-[80vh] object-contain" />
         <button
           onClick={handleClose}
-          className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded"
+          className="absolute top-2 right-2 bg-myGreen text-white font-poppins_black text-xl px-3 py-1 rounded"
         >
-          닫기
+          X
         </button>
       </div>
     </div>

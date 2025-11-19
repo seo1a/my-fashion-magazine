@@ -19,13 +19,15 @@ export default function StreetSnap() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen bg-black">
+    <div className="relative w-full min-h-screen bg-black pt-24">
       <Navigation />
-      <main className="flex-1 ml-[150px] px-4 py-16 bg-black font-noto_sans">
-        <h1 className="text-7xl font-bold text-center text-white mt-8 mb-28">SNAP</h1>
+      <main className="mx-auto max-w-6xl px-4 py-16 bg-black font-noto_sans text-white">
+        <h1 className="text-6xl md:text-8xl font-aftermath text-center text-myGreen mt-8 mb-24">
+          SNAP
+        </h1>
 
         <div className="flex justify-center mb-40">
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {snaps.map((snap, idx) => (
               <div
                 key={idx}
@@ -42,10 +44,10 @@ export default function StreetSnap() {
                   href={snap.출처링크}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-80 hover:opacity-100"
+                  className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-myGreen text-black text-xs px-2 py-1 rounded opacity-80 hover:opacity-100"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  출처
+                  🔗
                 </a>
               </div>
             ))}

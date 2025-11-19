@@ -1,19 +1,19 @@
 {
   "스트릿": {
-    "설명": "스트릿 문화가 형성되는 ‘스트릿(Street)’은\n아직 사회적으로 소속감을 가지지 못한 청소년이나 젊은 사람들이\n정체성과 욕구를 실현하는 공간을 의미하며,\n스트릿 패션에는 이들의 라이프 스타일이 담겨져 있다. MZ 세대가 리드하는 영컬쳐(Young Culture)의 영향으로\n스트릿 패션은 그들의 개성과 가치관 그리고 니즈를 대변하며\n문화 코드가 되고 있다. MZ 세대는 패션 브랜드가 주도하는 상업적이고 획일적인 유행 스타일을 거부하고,\n개인의 개성과 자아를 담아 일상의 요소들을 혼합하여\n형식 없이 하는 감각을 가지고 있다. 이들이 표현하는 스트릿 패션은\n보는 이에게 새롭고 낯설지만 흥미를 유발하며\n하이패션(High Fashion)의 신선한 디자인 영감이 되고 있다. 이러한 현대 스트릿 패션은 하이패션이 되어\n젊은 세대의 이색적인 라이프 스타일 문화로 이슈가 되고,\n명품 브랜드의 패션 디자인 콘셉트로서 그 영향력과 영역을 확장해 나아가고 있다.",
+    "설명": "스트릿 문화가 형성되는 ‘스트릿(Street)’은\n아직 사회적으로 소속감을 가지지 못한 청소년이나 젊은 사람들이\n정체성과 욕구를 실현하는 공간을 의미하며,\n스트릿 패션에는 이들의 라이프 스타일이 담겨져 있다. MZ 세대가 리드하는 영컬쳐(Young Culture)의 영향으로\n스트릿 패션은 그들의 개성과 가치관\n그리고 니즈를 대변하며 문화 코드가 되고 있다. MZ 세대는 패션 브랜드가 주도하는 상업적이고 획일적인\n 유행 스타일을 거부하고,\n개인의 개성과 자아를 담아 일상의 요소들을 혼합하여\n형식 없이 하는 감각을 가지고 있다. 이들이 표현하는 스트릿 패션은\n보는 이에게 새롭고 낯설지만 흥미를 유발하며\n하이패션(High Fashion)의 신선한 디자인 영감이 되고 있다. 이러한 현대 스트릿 패션은 하이패션이 되어\n젊은 세대의 이색적인 라이프 스타일 문화로 이슈가 되고,\n명품 브랜드의 패션 디자인 콘셉트로서 그 영향력과 영역을 확장해 나아가고 있다.",
     "패션이미지링크": [
-      "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/street_img1.png"
-    ],
-    "스냅이미지링크": [
-      "https://example.com/snap1.jpg",
-      "https://example.com/snap2.jpg"
+      "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/style/street_style1.jpg",
+      "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/style/street_style2.jpg",
+      "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/style/street_style3.jpg",
+      "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/style/street_style4.jpg",
+      "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/style/street_style5.jpg"
     ],
     "브랜드": {
       "Supreme": {
         "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/supreme/supreme_logo2.png",
         "공식사이트링크": "https://www.supremenewyork.com/",
         "공식인스타링크": "https://www.instagram.com/supremenewyork/",
-        "브랜드설명": "SUPREME(슈프림)은 1994년 4월 뉴욕 맨하탄 중심가 Lafayette 거리에서 시작된 브랜드입니다. SUPREME은 뉴욕시티 보드문화의 중심이 되었습니다. 뉴욕의 거칠고 반항적인 보더들과 아티스트들이 SUPREME의 Store staff와 고객, 마니아 층을 형성하며, SUPREME은 끊임없이 변하는 뉴욕 중심가 문화의 필수적인 부분으로 성장하였습니다. SUPREME이 다운타운의 명물(혹은 관례,관습)으로 성장하면서, 곧 품질과 스타일 그리고 신뢰로서 브랜드의 가치를 인정받았습니다. SUPREME만의 독특한 정체성을 유지할 수 있도록 우리시대 최고의 디자이너, 아티스트, 포토그래퍼 그리고 뮤지션들이 14년간의 역사와 함께했습니다.",
+        "브랜드설명": "SUPREME은 뉴욕시티 보드문화의 중심이 되었습니다. 뉴욕의 거칠고 반항적인 보더들과 아티스트들이 SUPREME의 Store staff와 고객, 마니아 층을 형성하며, SUPREME은 끊임없이 변하는 뉴욕 중심가 문화의 필수적인 부분으로 성장하였습니다.",
         "국가및출시년도": "미국, Since 1994",
         "브랜드컨셉사진링크": [
             {
@@ -95,7 +95,7 @@
         "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/carhartt/carhartt_logo.png",
         "공식사이트링크": "https://www.carhartt-wip.co.kr/",
         "공식인스타링크": "https://www.instagram.com/carhartt/",
-        "브랜드설명": "칼하트(CARHARTT)는 1889년 미국에서 설립된 워크 웨어 브랜드입니다. 오랜 역사와 전통을 자랑하는 이 브랜드는 뛰어난 내구성과 기능성으로 유명합니다. 그들의 제품은 근면성과 견고함을 상징하며, 도전적인 환경에서도 뛰어난 성능을 발휘합니다. 또한, 시간이 지남에 따라 더욱 멋스러워지는 디자인이 특징입니다. 칼하트는 튼튼하면서도 스타일리시한 워크 웨어 상품을 선보입니다.",
+        "브랜드설명": "칼하트(CARHARTT)는 1889년 미국에서 설립된 워크 웨어 브랜드입니다. 오랜 역사와 전통을 자랑하는 이 브랜드는 뛰어난 내구성과 기능성으로 유명합니다. 그들의 제품은 근면성과 견고함을 상징하며, 도전적인 환경에서도 뛰어난 성능을 발휘합니다.",
         "국가및출시년도": "미국, Since 1899",
         "브랜드컨셉사진링크": [
           {
@@ -133,10 +133,10 @@
         ]
       },
        "Stussy": {
-        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/stussy_logo.png",
+        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/stussy/stussy_logo_white.png",
         "공식사이트링크": "https://kr.stussy.com/",
         "공식인스타링크": "https://www.instagram.com/stussy",
-        "브랜드설명": "스투시는 1980년 SHAWN STUSSY라는 서프보드에 열광하는 CREW가 만든 브랜드 입니다. 스투시의 특유의 로고는 SHAWN STUSSY의 삼촌이 만든 로고로 지금은 스트릿웨어에서 빼놓을수 없는 브랜드로 자리 잡았지만 스투시의 시초는 캘리포니아에서 그가 티셔츠와 서프보드를 만들면서 시작된 작은 브랜드였습니다. 스투시의 성공요인은 언제나 열린마인드로 도쿄와 런던 뉴욕의 보더, DJ등과 교류를 하며 그들의 문화를 콘셉트으로 잡고 1970~80년대 영국 펑크의 DIY정신까지 받아들여 현재까지 독립적이며 모든 스트릿 문화를 좋아하는 사람들이 동경하는 브랜드로 자리 잡았습니다.",
+        "브랜드설명": "스투시는 1980년 SHAWN STUSSY라는 서프보드에 열광하는 CREW가 만든 브랜드 입니다. 스투시는 언제나 열린마인드로 도쿄와 런던 뉴욕의 보더, DJ등과 교류를 하며 그들의 문화를 콘셉트으로 잡고 1970~80년대 영국 펑크의 DIY정신까지 받아들여 현재까지 독립적이며 모든 스트릿 문화를 좋아하는 사람들이 동경하는 브랜드로 자리 잡았습니다.",
         "국가및출시년도": "미국, Since 1980",
         "브랜드컨셉사진링크": [
           {
@@ -170,10 +170,10 @@
         ]
       },
       "Nike": {
-        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/nike_logo.png",
+        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/nike/nike_logo_white.png",
         "공식사이트링크": "https://www.nike.com/kr",
         "공식인스타링크": "https://www.instagram.com/nike",
-        "브랜드설명": "1964년 설립된 나이키(NIKE)는 다양한 컬래버레이션과 두터운 마니아층들로 그 위치를 증명하는 브랜드입니다. 자신의 한계를 뛰어넘는 스포츠 정신이 바로 나이키 브랜드를 상징하며, '실패를 두려워하지 말라'는 메시지는 많은 사람들에게 긍정적인 희망을 주어 나이키의 핵심 가치이자 철학으로 자리매김했습니다. 나이키는 운동 선수들의 목소리에 귀를 기울이고, 그들이 최고의 기량을 발휘할 수 있도록 돕는 제품을 생산합니다. 세계적인 발자취, 혁신 문화와 팀 우선 정신을 바탕으로 전 세계를 위한 끊임없는 스포츠의 미래를 창조하고 있습니다.",
+        "브랜드설명": "자신의 한계를 뛰어넘는 스포츠 정신이 바로 나이키 브랜드를 상징하며, '실패를 두려워하지 말라'는 메시지는 많은 사람들에게 긍정적인 희망을 주어 나이키의 핵심 가치이자 철학으로 자리매김했습니다. 세계적인 발자취, 혁신 문화와 팀 우선 정신을 바탕으로 전 세계를 위한 끊임없는 스포츠의 미래를 창조하고 있습니다.",
         "국가및출시년도": "미국, Since 1964",
         "브랜드컨셉사진링크": [
           {
@@ -211,10 +211,10 @@
         ]
       },
       "Adidas": {
-        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/adidas_logo.png",
+        "공식로고이미지링크": "https://raw.githubusercontent.com/seo1a/fashion-magazine-image/refs/heads/main/street/adidas/adidas_logo_blue.png",
         "공식사이트링크": "https://www.adidas.co.kr/",
         "공식인스타링크": "https://www.instagram.com/adidas",
-        "브랜드설명": "스포츠 라이프스타일은 라커룸 밖에서도 계속됩니다. 1920년부터 독일의 헤르초게나우라흐에서 스포츠 슈즈를 만들던 아디다스(ADIDAS)는 이러한 철학을 토대로 경기장에서부터 거리에 이르기까지 모두가 즐길 수 있는 '스포츠 라이프스타일'의 개념을 처음으로 도입한 브랜드입니다. 스포츠 영역의 다양한 요소를 일상의 영역으로 가져오는 아디다스는 이를 통해 전 세계의 트렌드를 주도하고 있으며, 지금도 여전히 자신의 다양한 모습을 보여주고 싶어하는 소비자와 직접 소통하며 함께 혁신적인 트렌드를 만들고 있습니다.",
+        "브랜드설명": "아디다스(ADIDAS)는 이러한 철학을 토대로 경기장에서부터 거리에 이르기까지 모두가 즐길 수 있는 '스포츠 라이프스타일'의 개념을 처음으로 도입한 브랜드입니다. 스포츠 영역의 다양한 요소를 일상의 영역으로 가져오는 아디다스는 이를 통해 전 세계의 트렌드를 주도하고 있습니다.",
         "국가및출시년도": "독일, Since 1949",
         "브랜드컨셉사진링크": [
           {
