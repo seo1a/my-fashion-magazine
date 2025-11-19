@@ -18,6 +18,7 @@ export default function Street() {
   const [streetData, setStreetData] = useState<FashionData | null>(null);
   const navigate = useNavigate();
   const svgRef = useRef<SVGSVGElement | null>(null);
+  const isMobile = window.innerWidth < 640;
 
   // 설명을 문장 단위로 쪼갬 (headline 제외)
   const sentences = streetData?.설명
@@ -178,7 +179,7 @@ export default function Street() {
       {/* 설명글 영역 */}
       <div
         ref={containerRef}
-        className="relative w-full bg-black min-h-screen"
+        className="relative w-full bg-black min-h-screen pt-[37px] md:pt-0"
       >
         {/* headline (URBAN / VIBE / EDGE) */}
         <section className="headline-container px-6 md:px-12" aria-hidden>
@@ -220,14 +221,14 @@ export default function Street() {
 
               {/* 텍스트 그룹 — 화면 중앙 정렬. font-size는 viewBox 기준이며 CSS에서 반응형으로 조정 */}
               <g transform="translate(600,180)" textAnchor="middle" style={{ filter: 'url(#wavy) url(#glow)' }}>
-                <text className="svg-word" y="0" x="0" fill="url(#neonGrad)" fontWeight="900">URBAN</text>
-                <text className="svg-word" y="160" x="0" fill="url(#neonGrad)" fontWeight="900">VIBE</text>
-                <text className="svg-word" y="320" x="0" fill="url(#neonGrad)" fontWeight="900">EDGE</text>
+                <text className="svg-word" y={isMobile ? 0 : 0} x="0" fill="url(#neonGrad)" fontWeight="900">URBAN</text>
+                <text className="svg-word" y={isMobile ? 90 : 160} x="0" fill="url(#neonGrad)" fontWeight="900">VIBE</text>
+                <text className="svg-word" y={isMobile ? 180 : 320} x="0" fill="url(#neonGrad)" fontWeight="900">EDGE</text>
               </g>
               <g transform="translate(600,180)" textAnchor="middle" style={{ filter: 'url(#wavy)' }}>
                 <text
                   className="final-word"
-                  y="160"
+                  y={isMobile ? 90 : 0}
                   x="0"
                   fill="url(#finalGrad)"
                   fontWeight="400"

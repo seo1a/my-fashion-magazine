@@ -22,12 +22,12 @@ export default function StreetSnap() {
     <div className="relative w-full min-h-screen bg-black pt-16 sm:pt-20 md:pt-24">
       <Navigation />
       <main className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 bg-black font-noto_sans text-white">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-aftermath text-center text-myGreen mt-4 sm:mt-6 md:mt-8 mb-12 sm:mb-16 md:mb-24">
+        <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-aftermath text-center text-myGreen mt-4 sm:mt-6 md:mt-8 mb-12 sm:mb-16 md:mb-24">
           SNAP
         </h1>
 
         <div className="flex justify-center mb-20 sm:mb-32 md:mb-40">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
             {snaps.map((snap, idx) => (
               <div
                 key={idx}
@@ -37,7 +37,7 @@ export default function StreetSnap() {
                 <img
                   src={snap.이미지링크}
                   alt={`snap-${idx}`}
-                  className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[320px] h-auto aspect-[3/4] object-cover transform group-hover:scale-105 transition-transform duration-300"
+                  className="w-full max-w-[160px] sm:max-w-[220px] md:max-w-[320px] h-auto aspect-[3/4] object-cover transform group-hover:scale-105 transition-transform duration-300"
                 />
                 {/* 출처 버튼 */}
                 <a

@@ -50,6 +50,10 @@
 @media (max-width: 799px) {
   .svg-word { font-size: 64px; }
 }
+@media (max-width: 640px) {
+  .svg-word { font-size: 48px; }
+  .svg-word { letter-spacing: 0.1em }
+}
 
 @media (min-width: 1200px) {
   .final-word { font-size: 100px; }
@@ -59,6 +63,9 @@
 }
 @media (max-width: 799px) {
   .final-word { font-size: 64px; }
+}
+@media (max-width: 640px) {
+  .final-word { font-size: 32px; }
 }
 
 /* 추가: 약한 내부 글로우 보정 (CSS) */
