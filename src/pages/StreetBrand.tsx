@@ -245,6 +245,7 @@ export default function StreetBrand() {
       end: `+=${scrollLength + END_PAD}`,
       scrub: 0.5,
       pin: true,
+      pinSpacing: true,
       anticipatePin: 1,
       markers: true,
 
@@ -278,7 +279,7 @@ export default function StreetBrand() {
   }, [navigate, brandData, isMobile]);
 
   return (
-    <div className="relative w-full h-screen bg-black text-white overflow-hidden">
+    <div className={`relative w-full bg-black text-white ${isMobile ? 'h-screen overflow-hidden' : ''}`}>
       <Navigation />
       <BrandNavigation
         brands={brandData.map((b) => b.name)}
@@ -287,7 +288,9 @@ export default function StreetBrand() {
       <section
         ref={wrapperRef}
         className="relative w-full overflow-hidden bg-black"
-        style={{ height: 'calc(100vh - 64px)' }}
+        style={{ 
+          height: isMobile ? 'calc(100vh - 64px)' : 'calc(100vh - 96px)'
+        }}
       >
         <div 
           ref={trackRef} 

@@ -130,7 +130,7 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
                 setSelectedItem(item);
                 setSelectedColor(item.옵션[0]);
               }}
-              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors ${
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-xs font-medium transition-colors ${
                 selectedItem.제품명 === item.제품명
                   ? 'bg-white text-black'
                   : 'bg-myGreen text-black hover:bg-gray-300'
@@ -167,7 +167,7 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
-                        <span className="text-myGreen text-center text-sm sm:text-base md:text-lg font-bold">{selectedItem.제품명}</span>
+                        <span className="text-myGreen text-center text-[12px] sm:text-base md:text-lg font-bold">{selectedItem.제품명}</span>
                       </div>
                     </div>
                   </div>
