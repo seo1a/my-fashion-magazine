@@ -159,6 +159,7 @@ export default function StreetBrand() {
     if (!isMobile || !trackRef.current || brandData.length === 0) return;
 
     const track = trackRef.current;
+    /*
     let scrollPosition = 0;
 
     const handleTouchStart = (e: TouchEvent) => {
@@ -213,7 +214,7 @@ export default function StreetBrand() {
       track.removeEventListener('touchmove', handleTouchMove);
       track.removeEventListener('touchend', handleTouchEnd);
       track.removeEventListener('scroll', checkEnd);
-    };
+    };*/
   }, [isMobile, brandData, navigate]);
 
   // PC: ScrollTrigger 설정
