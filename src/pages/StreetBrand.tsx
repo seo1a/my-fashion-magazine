@@ -328,7 +328,7 @@ export default function StreetBrand() {
               } : {}}
             >
               <div
-                className="w-[250px] sm:w-[350px] md:w-[450px] lg:w-[500px] flex flex-col items-center justify-center font-freesentation mx-12 sm:mx-12 md:mx-16 lg:mx-28"
+                className="w-[250px] sm:w-[350px] md:w-[450px] lg:w-[500px] flex flex-col items-center justify-center font-noto_sans mx-12 sm:mx-12 md:mx-16 lg:mx-28"
                 ref={(el) => {
                   brandRefs.current[brandIndex] = el
                 }}

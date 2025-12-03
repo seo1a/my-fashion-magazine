@@ -255,29 +255,39 @@ export default function Street() {
                 key={idx}
                 className="relative w-full my-[10vh] sm:my-[20vh] md:my-[30vh] h-[400px] sm:h-[600px] md:h-[800px] flex items-center"
               >
-                {/* 이미지 (배경처럼) */}
+                {/* 이미지 */}
                 <figure
-                  className={`absolute top-0 w-full sm:w-3/5 h-full overflow-hidden ${
-                    idx % 2 === 0 ? "left-0" : "right-0"
+                  className={`absolute top-0 h-full overflow-hidden ${
+                    idx % 2 === 0 
+                      ? "left-0 origin-left" 
+                      : "right-0 origin-right"
                   } ${imgDirection} reveal`}
                 >
-                  <img
-                    src={imgSrc}
-                    alt={`street-img-${idx}`}
-                    className="w-full h-full object-contain grayscale"
-                  />
+                  <div className={`h-full flex items-center ${
+                    idx % 2 === 0 
+                      ? "ml-4 sm:ml-[4vw] md:ml-[6vw] lg:ml-[8vw] xl:ml-[10vw]" 
+                      : "mr-4 sm:mr-[4vw] md:mr-[6vw] lg:mr-[8vw] xl:mr-[10vw]"
+                  }`}>
+                    {/* 이미지 가로 600px 제한 */}
+                    <div className="w-full max-w-[300px] sm:max-w-[600px] px-4 sm:px-0">
+                      <img
+                        src={imgSrc}
+                        alt={`street-img-${idx}`}
+                        className="w-full h-auto max-h-screen object-contain grayscale"
+                      />
+                    </div>
+                  </div>
                 </figure>
 
                 {/* 설명글 (오버레이) */}
                 <div
-                  className={`sentence relative z-10 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed font-freesentation text-white ${
-                    idx % 2 === 0 
-                      ? "mr-auto text-left pl-0 sm:pl-[50%] md:pl-[650px]" 
-                      : "ml-auto text-right pr-0 sm:pr-[50%] md:pr-[650px]"
+                  className={`sentence absolute z-10 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 
+                    leading-relaxed font-freesentation text-white 
+                    ${idx % 2 === 0 
+                      ? "left-0 ml-[340px] sm:ml-[450px] md:ml-[850px] text-left"
+                      : "right-0 mr-[340px] sm:mr-[450px] md:mr-[850px] text-right"
                   } ${textDirection} reveal`}
                 >
-                  {/* 반투명 박스 */}
-                  <div className="absolute inset-0 bg-black/30 -z-10" />
                   
                   <p className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed font-freesentation text-white p-4 sm:p-6 md:p-8 mx-2 sm:mx-6 md:mx-12">
                     {sentence.split("\n").map((line, lineIdx) => (
