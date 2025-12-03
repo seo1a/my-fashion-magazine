@@ -269,7 +269,7 @@ export default function Street() {
                       : "mr-4 sm:mr-[4vw] md:mr-[6vw] lg:mr-[8vw] xl:mr-[10vw]"
                   }`}>
                     {/* 이미지 가로 600px 제한 */}
-                    <div className="w-full max-w-[300px] sm:max-w-[600px] px-4 sm:px-0">
+                    <div className="w-full max-w-[200px] sm:max-w-[600px] px-4 sm:px-0">
                       <img
                         src={imgSrc}
                         alt={`street-img-${idx}`}
@@ -284,12 +284,12 @@ export default function Street() {
                   className={`sentence absolute z-10 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 
                     leading-relaxed font-freesentation text-white 
                     ${idx % 2 === 0 
-                      ? "left-0 ml-[340px] sm:ml-[450px] md:ml-[850px] text-left"
-                      : "right-0 mr-[340px] sm:mr-[450px] md:mr-[850px] text-right"
+                      ? "left-0 ml-[40px] sm:ml-[450px] md:ml-[800px] text-left"
+                      : "right-0 mr-[40px] sm:mr-[450px] md:mr-[800px] text-right"
                   } ${textDirection} reveal`}
                 >
                   
-                  <p className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed font-freesentation text-white p-4 sm:p-6 md:p-8 mx-2 sm:mx-6 md:mx-12">
+                  <p className="text-[10px] sm:text-sm md:text-base lg:text-lg leading-relaxed font-freesentation text-white p-4 sm:p-6 md:p-8 mx-2 sm:mx-6 md:mx-12">
                     {sentence.split("\n").map((line, lineIdx) => (
                       <span key={lineIdx} className="block mb-1 sm:mb-2">
                         {line}

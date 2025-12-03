@@ -328,7 +328,12 @@ export default function StreetBrand() {
               } : {}}
             >
               <div
-                className="w-[250px] sm:w-[350px] md:w-[450px] lg:w-[500px] flex flex-col items-center justify-center font-noto_sans mx-12 sm:mx-12 md:mx-16 lg:mx-28"
+                className={
+                  `w-[250px] sm:w-[350px] md:w-[450px] lg:w-[500px] 
+                  flex flex-col items-center font-noto_sans 
+                  mx-12 sm:mx-12 md:mx-16 lg:mx-28
+                  ${isMobile ? 'h-screen justify-center' : 'justify-center'}`
+                }
                 ref={(el) => {
                   brandRefs.current[brandIndex] = el
                 }}
@@ -340,8 +345,12 @@ export default function StreetBrand() {
                       className="pt-4 sm:pt-6 md:pt-10 mb-2 sm:mb-4 w-[100px] sm:w-[150px] md:w-[200px] h-auto mx-auto"
                     />
                   )}
-                  <p className="text-xs sm:text-sm md:text-base text-white pt-4 sm:pt-6 md:pt-8 px-4 sm:px-8 md:px-12 lg:px-16 pb-6 sm:pb-8 md:pb-12 z-10">
-                    {brand.description}
+                  <p className="text-[10px] sm:text-[10px] md:text-[15px] text-white pt-4 sm:pt-6 md:pt-8 sm:px-2 lg:px-8 pb-6 sm:pb-8 md:pb-12 z-10">
+                    {brand.description.split("\n").map((line, lineIdx) => (
+                      <span key={lineIdx} className="block mb-1 sm:mb-2">
+                        {line}
+                      </span>
+                    ))}
                   </p>
                 </div>
               </div>
@@ -353,26 +362,15 @@ export default function StreetBrand() {
                     index % 2 === 0 ? "self-start pt-3 sm:pt-4 md:pt-20 " : "self-end pt-60"
                   }`}
                 >
-                  {media.type === "image" ? (
-                    <img
-                      src={media.url}
-                      alt={`Brand ${brandIndex} Image ${index}`}
-                      className="w-full h-auto object-cover transition-transform duration-300"
-                      onError={(e) => {
-                        console.warn("이미지 로딩 실패:", media.url);
-                        e.currentTarget.style.display = "none";
-                      }}
-                    />
-                  ) : (
-                    <video
-                      autoPlay
-                      muted
-                      loop
-                      src={media.url}
-                      controls
-                      className="w-full h-auto object-cover transition-transform duration-300"
-                    />
-                  )}
+                  <img
+                    src={media.url}
+                    alt={`Brand ${brandIndex} Image ${index}`}
+                    className="w-full h-auto object-cover transition-transform duration-300"
+                    onError={(e) => {
+                      console.warn("이미지 로딩 실패:", media.url);
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
                 </div>
               ))}
             </div>
