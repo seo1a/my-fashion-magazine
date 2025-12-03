@@ -29,8 +29,8 @@ export default function StreetBrand() {
   const touchStartY = useRef<number>(0);
   const isScrolling = useRef<boolean>(false);
 
-  // 🔧 끝을 살짝 더 보여주기 위한 패딩(px)
-  const END_PAD = 100;
+  // 🔧 끝을 살짝 더 보여주기 위한 패딩(px) - 마지막 사진 이후 여유 공간
+  const END_PAD = 300; // 마지막 사진이 모두 보이도록 충분한 패딩
   const navigatedRef = useRef(false);
 
   // 모바일/데스크톱 감지
@@ -192,11 +192,14 @@ export default function StreetBrand() {
     // 끝에 도달했는지 확인
     const checkEnd = () => {
       const maxScroll = track.scrollWidth - track.clientWidth;
-      if (track.scrollLeft >= maxScroll - 50 && !navigatedRef.current) {
+      // 마지막 사진이 모두 보이고 추가 여백까지 스크롤한 후에만 다음 페이지로 이동
+      if (track.scrollLeft >= maxScroll - 100 && !navigatedRef.current) {
         navigatedRef.current = true;
         setTimeout(() => {
           navigate("/street/item");
         }, 500);
+      } else if (track.scrollLeft < maxScroll - 100) {
+        navigatedRef.current = false;
       }
     };
 
@@ -221,6 +224,9 @@ export default function StreetBrand() {
     const track = trackRef.current;
     if (!wrapper || !track || brandData.length === 0) return;
 
+    // 🧹 1) wrapper에 남은 inline height 제거
+    gsap.set(wrapper, { clearProps: "height" });
+  
     // 기존 ScrollTrigger 정리
     ScrollTrigger.getAll().forEach(trigger => {
       if (trigger.vars?.trigger === wrapper) {
@@ -232,6 +238,11 @@ export default function StreetBrand() {
     const scrollWidth = track.scrollWidth;
     const viewportWidth = window.innerWidth - marginLeft;
     const scrollLength = scrollWidth - viewportWidth;
+    const totalScrollLength = scrollLength + END_PAD;
+    
+    // 마지막 사진이 모두 보이고 추가 여백까지 스크롤한 후에만 다음 페이지로 이동
+    // END_PAD를 고려하여 progress 임계값 계산
+    const threshold = scrollLength / totalScrollLength;
 
     const tween = gsap.to(track, {
       x: -scrollLength,
@@ -242,7 +253,7 @@ export default function StreetBrand() {
       trigger: wrapper,
       animation: tween,
       start: "top top",
-      end: `+=${scrollLength + END_PAD}`,
+      end: `+=${totalScrollLength}`,
       scrub: 0.5,
       pin: true,
       pinSpacing: true,
@@ -250,9 +261,11 @@ export default function StreetBrand() {
       markers: true,
 
       onUpdate: (self) => {
-        if (!navigatedRef.current && self.direction === 1 && self.progress > 0.98) {
+        if (!navigatedRef.current && self.direction === 1 && self.progress >= threshold) {
           navigatedRef.current = true;
           navigate("/street/item");
+        } else if (self.progress < threshold) {
+          navigatedRef.current = false;
         }
       },
 
@@ -287,30 +300,34 @@ export default function StreetBrand() {
       />
       <section
         ref={wrapperRef}
-        className="relative w-full overflow-hidden bg-black"
-        style={{ 
-          height: isMobile ? 'calc(100vh - 64px)' : 'calc(100vh - 96px)'
-        }}
+        className="relative w-full overflow-hidden bg-black h-auto"
+        
       >
         <div 
           ref={trackRef} 
-          className={`flex h-full w-[2150vw] gallery-track ${
+          className={`flex h-full gallery-track ${
             isMobile ? 'overflow-x-auto overflow-y-hidden snap-x snap-mandatory' : ''
           }`}
           style={isMobile ? { 
             WebkitOverflowScrolling: 'touch',
             scrollBehavior: 'smooth'
-          } : {}}
+          } : {
+            width: 'max-content'
+          }}
         >
           {brandData.map((brand, brandIndex) => (
             <div 
               key={brandIndex} 
               className={`flex mr-8 sm:mr-16 md:mr-32 lg:mr-52 ${
-                isMobile ? 'snap-start flex-shrink-0' : ''
+                isMobile ? 'snap-start flex-shrink-0' : 'h-full'
               }`}
+              style={!isMobile ? {
+                minHeight: '100%',
+                height: '100%'
+              } : {}}
             >
               <div
-                className="w-[250px] sm:w-[350px] md:w-[450px] lg:w-[500px] flex flex-col items-center justify-center font-noto_sans mx-12 sm:mx-12 md:mx-16 lg:mx-28"
+                className="w-[250px] sm:w-[350px] md:w-[450px] lg:w-[500px] flex flex-col items-center justify-center font-freesentation mx-12 sm:mx-12 md:mx-16 lg:mx-28"
                 ref={(el) => {
                   brandRefs.current[brandIndex] = el
                 }}
@@ -332,7 +349,7 @@ export default function StreetBrand() {
                   key={`${brandIndex}-${index}`}
                   id={`brand-image-${brandIndex}-${index}`}
                   className={`w-[300px] sm:w-[300px] md:w-[400px] lg:w-[580px] h-auto mx-12 sm:mx-12 md:mx-16 lg:mx-32 flex items-center justify-center overflow-hidden cursor-pointer ${
-                    index % 2 === 0 ? "self-start" : "self-end"
+                    index % 2 === 0 ? "self-start pt-3 sm:pt-4 md:pt-20 " : "self-end pt-60"
                   }`}
                 >
                   {media.type === "image" ? (
@@ -359,6 +376,8 @@ export default function StreetBrand() {
               ))}
             </div>
           ))}
+          {/* 마지막 브랜드 이후 추가 여백 */}
+          <div className="flex-shrink-0 w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px]"></div>
         </div>
       </section>
     </div>

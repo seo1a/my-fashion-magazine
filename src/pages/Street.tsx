@@ -228,7 +228,7 @@ export default function Street() {
               <g transform="translate(600,180)" textAnchor="middle" style={{ filter: 'url(#wavy)' }}>
                 <text
                   className="final-word"
-                  y={isMobile ? 90 : 0}
+                  y={isMobile ? 90 : 160}
                   x="0"
                   fill="url(#finalGrad)"
                   fontWeight="400"
@@ -264,7 +264,7 @@ export default function Street() {
                   <img
                     src={imgSrc}
                     alt={`street-img-${idx}`}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain grayscale"
                   />
                 </figure>
 
