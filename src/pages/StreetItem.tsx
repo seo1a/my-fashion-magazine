@@ -117,9 +117,8 @@ export default function StreetItem({ items = [] }: StreetBrandProps) {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 py-4 sm:py-6 md:py-8">
 
         <p className='text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-poppins font-bold mt-2 sm:mt-4 mb-8 sm:mb-12 md:mb-20 tracking-wider'>
-          Recommended items
-          <br className="block sm:hidden" />
-          for your <span className="text-myGreen text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-aftermath font-light tracking-widest">cool</span> street fashion
+            <span className="inline">Recommended items</span>
+            <span className="block sm:inline"> for your <span className="text-myGreen text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-aftermath font-light tracking-widest">cool</span> street fashion</span>
         </p>
         {/* 아이템 선택 버튼 */}
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-2 sm:mt-4 mb-2 sm:mb-4">

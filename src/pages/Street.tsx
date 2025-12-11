@@ -4,6 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import Navigation from "../components/Navigation";
 import "../styles/Street.css"; // 추가된 CSS
+import word1Image from "../assets/word1.png";
+import word2Image from "../assets/word2.png";
 
 interface FashionData {
   설명: string;
@@ -253,22 +255,23 @@ export default function Street() {
             return (
               <section
                 key={idx}
-                className="relative w-full my-[10vh] sm:my-[20vh] md:my-[30vh] h-[400px] sm:h-[600px] md:h-[800px] flex items-center"
+                className="relative w-full my-[10vh] sm:my-[20vh] md:my-[30vh] 
+                          h-[400px] sm:h-[600px] md:h-[800px] flex items-center"
               >
+
                 {/* 이미지 */}
                 <figure
                   className={`absolute top-0 h-full overflow-hidden ${
-                    idx % 2 === 0 
-                      ? "left-0 origin-left" 
-                      : "right-0 origin-right"
+                    idx % 2 === 0 ? "left-0 origin-left" : "right-0 origin-right"
                   } ${imgDirection} reveal`}
                 >
-                  <div className={`h-full flex items-center ${
-                    idx % 2 === 0 
-                      ? "ml-4 sm:ml-[4vw] md:ml-[6vw] lg:ml-[8vw] xl:ml-[10vw]" 
-                      : "mr-4 sm:mr-[4vw] md:mr-[6vw] lg:mr-[8vw] xl:mr-[10vw]"
-                  }`}>
-                    {/* 이미지 가로 600px 제한 */}
+                  <div
+                    className={`h-full flex items-center ${
+                      idx % 2 === 0 
+                        ? "ml-4 sm:ml-[4vw] md:ml-[6vw] lg:ml-[8vw] xl:ml-[10vw]"
+                        : "mr-4 sm:mr-[4vw] md:mr-[6vw] lg:mr-[8vw] xl:mr-[10vw]"
+                    }`}
+                  >
                     <div className="w-full max-w-[200px] sm:max-w-[600px] px-4 sm:px-0">
                       <img
                         src={imgSrc}
@@ -279,17 +282,16 @@ export default function Street() {
                   </div>
                 </figure>
 
-                {/* 설명글 (오버레이) */}
+                {/* 설명글 */}
                 <div
                   className={`sentence absolute z-10 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 
                     leading-relaxed font-freesentation text-white 
                     ${idx % 2 === 0 
-                      ? "left-0 ml-[40px] sm:ml-[450px] md:ml-[800px] text-left"
-                      : "right-0 mr-[40px] sm:mr-[450px] md:mr-[800px] text-right"
-                  } ${textDirection} reveal`}
+                      ? "left-0 ml-[40px] sm:ml-[450px] md:ml-[900px] text-left"
+                      : "right-0 mr-[40px] sm:mr-[450px] md:mr-[900px] text-right"
+                    } ${textDirection} reveal`}
                 >
-                  
-                  <p className="text-[10px] sm:text-sm md:text-base lg:text-lg leading-relaxed font-freesentation text-white p-4 sm:p-6 md:p-8 mx-2 sm:mx-6 md:mx-12">
+                  <p className="text-[10px] sm:text-sm md:text-base lg:text-lg leading-relaxed p-4 sm:p-6 md:p-8">
                     {sentence.split("\n").map((line, lineIdx) => (
                       <span key={lineIdx} className="block mb-1 sm:mb-2">
                         {line}
@@ -297,6 +299,31 @@ export default function Street() {
                     ))}
                   </p>
                 </div>
+
+                {idx === 0 && (
+                  <img
+                    src={word1Image}
+                    alt="word-effect-1"
+                    className="absolute z-0 
+                              right-0 top-1/2 -translate-y-1/2 
+                              w-auto h-[60px] sm:h-[120px] md:h-[200px] lg:h-[780px] 
+                              right-[-50px]
+                              brightness-50"
+                  />
+                )}
+
+                {idx === 1 && (
+                  <img
+                    src={word2Image}
+                    alt="word-effect-2"
+                    className="absolute z-0 
+                              left-0 top-1/2 -translate-y-1/2 
+                              w-auto h-[60px] sm:h-[120px] md:h-[200px] lg:h-[800px] 
+                              left-[-50px]
+                              brightness-50"
+                  />
+                )}
+
               </section>
             );
           })}

@@ -73,3 +73,9 @@
 
 /* 만약 사이드 네비게이션과 겹치는 문제 있으면 z-index 조절 */
 .headline-container { z-index: 1; }
+
+/*
+.word-even {
+  position: absolute;
+  right: -430px;
+}*/
