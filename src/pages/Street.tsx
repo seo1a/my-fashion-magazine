@@ -181,7 +181,7 @@ export default function Street() {
             return (
               <section
                 key={idx}
-                className={`relative w-full my-[15vh] sm:my-[20vh] md:my-[30vh] 
+                className={`relative w-full my-[20vh] sm:my-[20vh] md:my-[30vh] 
                           flex flex-col sm:flex-row sm:items-center
                           ${isMobile ? 'h-auto' : 'h-[400px] sm:h-[600px] md:h-[800px]'}`}
               >
