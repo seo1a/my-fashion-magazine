@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
 import Navigation from "../components/Navigation";
 import "../styles/Street.css"; // 추가된 CSS
 import word1Image from "../assets/word1.png";
@@ -15,14 +16,13 @@ interface FashionData {
   패션이미지링크: string[];
 }
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function Street() {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const lastSectionRef = useRef<HTMLElement | null>(null); // 마지막 문구 ref
   const [streetData, setStreetData] = useState<FashionData | null>(null);
   const navigate = useNavigate();
-  const svgRef = useRef<SVGSVGElement | null>(null);
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
   const isMobile = window.innerWidth < 640;
 
   const wordImages = [
@@ -32,6 +32,41 @@ export default function Street() {
     word4Image,
     word5Image,
   ];
+
+   //헤드라인 GSAP 효과 (SplitText)
+  useEffect(() => {
+    if (!titleRef.current) return;
+
+    const splitter = new SplitText(titleRef.current, { type: "chars" });
+    const chars = splitter.chars;
+
+    gsap.from(chars, {
+        duration: 0.5,
+        y: 50, // 아래에서 위로 올라오기
+        opacity: 0,
+        ease: 'power2.out',
+        stagger: {
+            each: 0.08, // 각 문자 등장 시간차
+            from: 'start' // 왼쪽에서 오른쪽으로 시작
+        }
+    });
+    
+    // 등장 후 파도 효과 (무한 반복)
+    gsap.to(chars, {
+        duration: 0.3,
+        scaleY: 1.2, // Y축으로 1.2배 커짐
+        yoyo: true, // 역재생
+        repeat: -1, // 무한 반복
+        ease: 'sine.inOut',
+        stagger: {
+            amount: 1, // 전체 반복 시간을 1초로 분산
+            from: 'center', // 중앙에서 바깥으로 파동 시작
+            repeat: -1
+        }
+    });
+
+    return () => splitter.revert();
+  }, []);
 
   // 설명을 문장 단위로 쪼갬 (headline 제외)
   const sentences = streetData?.설명
@@ -50,96 +85,6 @@ export default function Street() {
         console.error("JSON fetch error:", err);
       });
   }, []);
-
-  // 스크롤 시 /street/brand로 이동
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-
-      if (scrollTop + windowHeight >= documentHeight - 10) {
-        navigate("/street/brand");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [navigate]);
-
-  useEffect(() => {
-    if (!svgRef.current) return;
-
-    const turb = svgRef.current.querySelector('#turb') as SVGElement | null;
-    const disp = svgRef.current.querySelector('#disp') as SVGElement | null;
-
-    if (!turb || !disp) return;
-
-    // 🎬 초기 텍스트 애니메이션 (URBAN / VIBE / EDGE)
-    const tl = gsap.timeline({ defaults: { ease: "sine.inOut" } });
-
-    tl.to(turb, {
-      attr: { baseFrequency: "0.03 0.02" },
-      duration: 3,
-    })
-      .to(disp, {
-        attr: { scale: 40 },
-        duration: 1.5,
-      }, "<")
-      .to(turb, {
-        attr: { baseFrequency: "0.02 0.04" },
-        duration: 3,
-      })
-      .to(disp, {
-        attr: { scale: 18 },
-        duration: 1.5,
-      }, "<");
-
-    // 글자 등장 → 사라짐
-    gsap.fromTo('.svg-word', { opacity: 0, y: 30, scale: 0.98 }, {
-      opacity: 1, y: 0, scale: 1,
-      stagger: 0.45,
-      duration: 1.2,
-      ease: 'power3.out',
-      onComplete: () => {
-        gsap.to('.svg-word', {
-          opacity: 0,
-          duration: 1.5,
-          delay: 0.8,
-          onComplete: () => {
-            // ✨ STREET FASHION 등장
-            gsap.to('.final-word', {
-              opacity: 1,
-              scale: 1,
-              duration: 1.8,
-              ease: "power3.out",
-              onComplete: () => {
-                // 물결 효과
-                const tl2 = gsap.timeline({ repeat: 0, defaults: { ease: "sine.inOut" } });
-                tl2.to(turb, { attr: { baseFrequency: "0.035 0.025" }, duration: 2 })
-                  .to(disp, { attr: { scale: 20 }, duration: 1.5 }, "<");
-                tl2.eventCallback("onComplete", () => {
-                  gsap.to(turb, { attr: { baseFrequency: "0 0" }, duration: 1.2 });
-                  gsap.to(disp, { attr: { scale: 0 }, duration: 1.2 });
-                });
-              }
-            });
-          }
-        });
-      }
-    });
-
-    return () => {
-      tl.kill();
-      gsap.killTweensOf(turb);
-      gsap.killTweensOf(disp);
-    };
-  }, []);
-
-
-
 
 
   // 중간의 이미지+문구
@@ -184,6 +129,23 @@ export default function Street() {
     });
   }, [sentences]);
 
+  // 스크롤 시 /street/brand로 이동
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      if (scrollTop + windowHeight >= documentHeight - 10) {
+        navigate("/street/brand");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [navigate]);
 
   return (
     <div className="relative w-full min-h-[150vh] bg-black text-white pt-4">
@@ -194,63 +156,11 @@ export default function Street() {
         ref={containerRef}
         className="relative w-full bg-black min-h-screen pt-[37px] md:pt-0"
       >
-        {/* headline (URBAN / VIBE / EDGE) */}
+        {/* headline */}
         <section className="headline-container px-6 md:px-12" aria-hidden>
-            {/* inline SVG definitions + text. React-friendly 방식 */}
-            <svg className="headline-svg" width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" ref={svgRef}>
-              <defs>
-                {/* 컬러 그라데이션 */}
-                <linearGradient id="neonGrad" x1="0" x2="1">
-                  <stop offset="0%" stopColor="#FF6EDB" />
-                  <stop offset="50%" stopColor="#00FF57" />
-                  <stop offset="100%" stopColor="#9BFFEA" />  
-                </linearGradient>
-
-              
-                <linearGradient id="finalGrad" x1="0" x2="1">
-                  <stop offset="0%" stopColor="#00FF57" />
-                  <stop offset="50%" stopColor="#00FF57" />
-                  <stop offset="100%" stopColor="#00FF57" />
-                </linearGradient>
-
-                {/* wavy filter */}
-                <filter id="wavy" x="-20%" y="-20%" width="140%" height="140%">
-                  <feTurbulence id="turb" baseFrequency="0.02 0.03" numOctaves="2" seed="2" result="noise" />
-                  <feDisplacementMap id="disp" in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G" />
-                
-                  <feGaussianBlur stdDeviation="0.2" result="blurred" />
-                  <feComposite in="SourceGraphic" in2="blurred" operator="atop" />
-                </filter>
-
-                {/* 약한 외곽 글로우 (svg용) */}
-                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="6" result="coloredBlur" />
-                  <feMerge>
-                    <feMergeNode in="coloredBlur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-
-              {/* 텍스트 그룹 — 화면 중앙 정렬. font-size는 viewBox 기준이며 CSS에서 반응형으로 조정 */}
-              <g transform="translate(600,180)" textAnchor="middle" style={{ filter: 'url(#wavy) url(#glow)' }}>
-                <text className="svg-word" y={isMobile ? 0 : 0} x="0" fill="url(#neonGrad)" fontWeight="900">URBAN</text>
-                <text className="svg-word" y={isMobile ? 90 : 160} x="0" fill="url(#neonGrad)" fontWeight="900">VIBE</text>
-                <text className="svg-word" y={isMobile ? 180 : 320} x="0" fill="url(#neonGrad)" fontWeight="900">EDGE</text>
-              </g>
-              <g transform="translate(600,180)" textAnchor="middle" style={{ filter: 'url(#wavy)' }}>
-                <text
-                  className="final-word"
-                  y={isMobile ? 90 : 160}
-                  x="0"
-                  fill="url(#finalGrad)"
-                  fontWeight="400"
-                  style={{ opacity: 0, transformOrigin: "center", scale: 1 }}
-                >
-                  Street Fashion
-                </text>
-              </g>
-            </svg>
+          <h1 ref={titleRef} className="font-aftermath text-myGreen text-center text-6xl md:text-8xl lg:text-9xl my-20">
+            STREET FASHION
+          </h1>
         </section>
 
         <div className="px-4 sm:px-6 md:px-12">
@@ -273,7 +183,7 @@ export default function Street() {
 
                 {/* 이미지 */}
                 <figure
-                  className={`${isMobile ? 'relative w-full flex justify-center' : 'absolute top-0 h-full'} overflow-hidden ${
+                  className={`${isMobile ? 'relative w-full flex justify-center' : 'absolute top-0 h-full'} overflow-hidden z-5 ${
                     idx % 2 === 0 ? "left-0 origin-left" : "right-0 origin-right"
                   } ${imgDirection} reveal`}
                 >
@@ -301,15 +211,15 @@ export default function Street() {
                     ${idx % 2 === 0 
                       ? isMobile 
                         ? "" 
-                        : "left-0 ml-[10px] sm:ml-[450px] md:ml-[900px] text-left"
+                        : "left-0 ml-[10px] sm:ml-[450px] md:ml-[750px] text-left"
                       : isMobile
                         ? ""
-                        : "right-0 mr-[10px] sm:mr-[450px] md:mr-[900px] text-right"
+                        : "right-0 mr-[10px] sm:mr-[450px] md:mr-[750px] text-right"
                     } ${textDirection} reveal`}
                 >
                   {isMobile ? (
                     <div className={`w-full max-w-[600px] px-4 ${idx % 2 === 0 ? 'text-left' : 'text-right'}`}>
-                      <p className="text-[10px] sm:text-sm md:text-base lg:text-lg leading-relaxed p-3 sm:p-4 md:p-8">
+                      <p className="text-[12px] sm:text-sm md:text-base lg:text-lg leading-relaxed p-3 sm:p-4 md:p-8">
                         {sentence.split("\n").map((line, lineIdx) => (
                           <span key={lineIdx} className="block mb-1 sm:mb-2">
                             {line}
@@ -318,7 +228,7 @@ export default function Street() {
                       </p>
                     </div>
                   ) : (
-                    <p className="text-[10px] sm:text-sm md:text-base lg:text-lg leading-relaxed p-4 sm:p-6 md:p-8">
+                    <p className="text-[12px] sm:text-sm md:text-base lg:text-lg leading-relaxed p-4 sm:p-6 md:p-8">
                       {sentence.split("\n").map((line, lineIdx) => (
                         <span key={lineIdx} className="block mb-1 sm:mb-2">
                           {line}

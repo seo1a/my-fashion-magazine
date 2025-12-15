@@ -358,8 +358,8 @@ export default function StreetBrand() {
                 <div
                   key={`${brandIndex}-${index}`}
                   id={`brand-image-${brandIndex}-${index}`}
-                  className={`w-[500px] sm:w-[500px] md:w-[550px] lg:w-[580px] h-auto mx-24 sm:mx-24 md:mx-28 lg:mx-32 flex items-center justify-center overflow-hidden cursor-pointer ${
-                    index % 2 === 0 ? "self-start pt-14 sm:pt-14 md:pt-20 " : "self-end pt-60"
+                  className={`w-[450px] sm:w-[450px] md:w-[550px] lg:w-[580px] h-auto mx-24 sm:mx-24 md:mx-28 lg:mx-32 flex items-center justify-center overflow-hidden cursor-pointer ${
+                    index % 2 === 0 ? "self-start pt-10 sm:pt-10 md:pt-20 " : "self-end pt-60"
                   }`}
                 >
                   <img

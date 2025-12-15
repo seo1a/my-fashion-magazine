@@ -7,7 +7,7 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const links = [
-    { path: "/", label: "Style" },
+    { path: "/", label: "Home" },
     { path: "/street/brand", label: "Brands" },
     { path: "/street/item", label: "Items" },
     { path: "/street/snap", label: "Snap" },
