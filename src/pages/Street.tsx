@@ -266,24 +266,25 @@ export default function Street() {
             return (
               <section
                 key={idx}
-                className="relative w-full my-[10vh] sm:my-[20vh] md:my-[30vh] 
-                          h-[400px] sm:h-[600px] md:h-[800px] flex items-center"
+                className={`relative w-full my-[15vh] sm:my-[20vh] md:my-[30vh] 
+                          flex flex-col sm:flex-row sm:items-center
+                          ${isMobile ? 'h-auto' : 'h-[400px] sm:h-[600px] md:h-[800px]'}`}
               >
 
                 {/* 이미지 */}
                 <figure
-                  className={`absolute top-0 h-full overflow-hidden ${
+                  className={`${isMobile ? 'relative w-full flex justify-center' : 'absolute top-0 h-full'} overflow-hidden ${
                     idx % 2 === 0 ? "left-0 origin-left" : "right-0 origin-right"
                   } ${imgDirection} reveal`}
                 >
                   <div
-                    className={`h-full flex items-center ${
+                    className={`${isMobile ? 'h-auto' : 'h-full'} ${isMobile ? '' : 'flex items-center'} ${
                       idx % 2 === 0 
-                        ? "ml-4 sm:ml-[4vw] md:ml-[6vw] lg:ml-[8vw] xl:ml-[10vw]"
-                        : "mr-4 sm:mr-[4vw] md:mr-[6vw] lg:mr-[8vw] xl:mr-[10vw]"
+                        ? isMobile ? "" : "ml-4 sm:ml-[4vw] md:ml-[6vw] lg:ml-[8vw] xl:ml-[10vw]"
+                        : isMobile ? "" : "mr-4 sm:mr-[4vw] md:mr-[6vw] lg:mr-[8vw] xl:mr-[10vw]"
                     }`}
                   >
-                    <div className="w-full max-w-[600px] sm:max-w-[600px] px-4 sm:px-0">
+                    <div className="w-full max-w-[500px] sm:max-w-[500px] px-4 sm:px-0">
                       <img
                         src={imgSrc}
                         alt={`street-img-${idx}`}
@@ -295,20 +296,36 @@ export default function Street() {
 
                 {/* 설명글 */}
                 <div
-                  className={`sentence absolute z-10 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 
+                  className={`sentence ${isMobile ? 'relative mt-4 w-full flex justify-center' : 'absolute z-10'} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 
                     leading-relaxed font-freesentation text-white 
                     ${idx % 2 === 0 
-                      ? "left-0 ml-[40px] sm:ml-[450px] md:ml-[900px] text-left"
-                      : "right-0 mr-[40px] sm:mr-[450px] md:mr-[900px] text-right"
+                      ? isMobile 
+                        ? "" 
+                        : "left-0 ml-[10px] sm:ml-[450px] md:ml-[900px] text-left"
+                      : isMobile
+                        ? ""
+                        : "right-0 mr-[10px] sm:mr-[450px] md:mr-[900px] text-right"
                     } ${textDirection} reveal`}
                 >
-                  <p className="text-[10px] sm:text-sm md:text-base lg:text-lg leading-relaxed p-4 sm:p-6 md:p-8">
-                    {sentence.split("\n").map((line, lineIdx) => (
-                      <span key={lineIdx} className="block mb-1 sm:mb-2">
-                        {line}
-                      </span>
-                    ))}
-                  </p>
+                  {isMobile ? (
+                    <div className={`w-full max-w-[600px] px-4 ${idx % 2 === 0 ? 'text-left' : 'text-right'}`}>
+                      <p className="text-[10px] sm:text-sm md:text-base lg:text-lg leading-relaxed p-3 sm:p-4 md:p-8">
+                        {sentence.split("\n").map((line, lineIdx) => (
+                          <span key={lineIdx} className="block mb-1 sm:mb-2">
+                            {line}
+                          </span>
+                        ))}
+                      </p>
+                    </div>
+                  ) : (
+                    <p className="text-[10px] sm:text-sm md:text-base lg:text-lg leading-relaxed p-4 sm:p-6 md:p-8">
+                      {sentence.split("\n").map((line, lineIdx) => (
+                        <span key={lineIdx} className="block mb-1 sm:mb-2">
+                          {line}
+                        </span>
+                      ))}
+                    </p>
+                  )}
                 </div>
 
                 {idx % 2 === 0 && wordImages[idx] && (
