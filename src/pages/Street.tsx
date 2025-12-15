@@ -6,6 +6,9 @@ import Navigation from "../components/Navigation";
 import "../styles/Street.css"; // 추가된 CSS
 import word1Image from "../assets/word1.png";
 import word2Image from "../assets/word2.png";
+import word3Image from "../assets/word3.png";
+import word4Image from "../assets/word4.png";
+import word5Image from "../assets/word5.png";
 
 interface FashionData {
   설명: string;
@@ -21,6 +24,14 @@ export default function Street() {
   const navigate = useNavigate();
   const svgRef = useRef<SVGSVGElement | null>(null);
   const isMobile = window.innerWidth < 640;
+
+  const wordImages = [
+    word1Image,
+    word2Image,
+    word3Image,
+    word4Image,
+    word5Image,
+  ];
 
   // 설명을 문장 단위로 쪼갬 (headline 제외)
   const sentences = streetData?.설명
@@ -300,10 +311,10 @@ export default function Street() {
                   </p>
                 </div>
 
-                {idx === 0 && (
+                {idx % 2 === 0 && wordImages[idx] && (
                   <img
-                    src={word1Image}
-                    alt="word-effect-1"
+                    src={wordImages[idx]}
+                    alt={`word-effect-${idx + 1}`}
                     className="absolute z-0 
                               right-0 top-1/2 -translate-y-1/2 
                               w-auto h-[60px] sm:h-[120px] md:h-[200px] lg:h-[780px] 
@@ -311,11 +322,10 @@ export default function Street() {
                               brightness-50"
                   />
                 )}
-
-                {idx === 1 && (
+                {idx % 2 === 1 && wordImages[idx] && (
                   <img
-                    src={word2Image}
-                    alt="word-effect-2"
+                    src={wordImages[idx]}
+                    alt={`word-effect-${idx + 1}`}
                     className="absolute z-0 
                               left-0 top-1/2 -translate-y-1/2 
                               w-auto h-[60px] sm:h-[120px] md:h-[200px] lg:h-[800px] 
@@ -323,7 +333,7 @@ export default function Street() {
                               brightness-50"
                   />
                 )}
-
+                
               </section>
             );
           })}
