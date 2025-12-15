@@ -283,7 +283,7 @@ export default function Street() {
                         : "mr-4 sm:mr-[4vw] md:mr-[6vw] lg:mr-[8vw] xl:mr-[10vw]"
                     }`}
                   >
-                    <div className="w-full max-w-[200px] sm:max-w-[600px] px-4 sm:px-0">
+                    <div className="w-full max-w-[600px] sm:max-w-[600px] px-4 sm:px-0">
                       <img
                         src={imgSrc}
                         alt={`street-img-${idx}`}
