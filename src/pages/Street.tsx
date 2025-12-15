@@ -154,12 +154,18 @@ export default function Street() {
       {/* 설명글 영역 */}
       <div
         ref={containerRef}
-        className="relative w-full bg-black min-h-screen pt-[37px] md:pt-0"
+        className="relative w-full bg-black min-h-screen"
       >
         {/* headline */}
         <section className="headline-container px-6 md:px-12" aria-hidden>
-          <h1 ref={titleRef} className="font-aftermath text-myGreen text-center text-6xl md:text-8xl lg:text-9xl my-20">
-            STREET FASHION
+          <h1
+            ref={titleRef}
+            className="font-aftermath text-myGreen text-center text-7xl md:text-8xl lg:text-9xl"
+          >
+            STREET
+            <br className="sm:hidden" />
+            <span className="hidden sm:inline"> </span>
+            FASHION
           </h1>
         </section>
 
@@ -207,19 +213,19 @@ export default function Street() {
                 {/* 설명글 */}
                 <div
                   className={`sentence ${isMobile ? 'relative mt-4 w-full flex justify-center' : 'absolute z-10'} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 
-                    leading-relaxed font-freesentation text-white 
+                    leading-relaxed font-noto_sans text-white 
                     ${idx % 2 === 0 
                       ? isMobile 
                         ? "" 
-                        : "left-0 ml-[10px] sm:ml-[450px] md:ml-[750px] text-left"
+                        : "left-0 ml-[8px] sm:ml-[450px] md:ml-[750px] text-left"
                       : isMobile
                         ? ""
-                        : "right-0 mr-[10px] sm:mr-[450px] md:mr-[750px] text-right"
+                        : "right-0 mr-[8px] sm:mr-[450px] md:mr-[750px] text-right"
                     } ${textDirection} reveal`}
                 >
                   {isMobile ? (
                     <div className={`w-full max-w-[600px] px-4 ${idx % 2 === 0 ? 'text-left' : 'text-right'}`}>
-                      <p className="text-[12px] sm:text-sm md:text-base lg:text-lg leading-relaxed p-3 sm:p-4 md:p-8">
+                      <p className="text-[11px] sm:text-sm md:text-base lg:text-lg leading-relaxed p-3 sm:p-4 md:p-8">
                         {sentence.split("\n").map((line, lineIdx) => (
                           <span key={lineIdx} className="block mb-1 sm:mb-2">
                             {line}
@@ -228,7 +234,7 @@ export default function Street() {
                       </p>
                     </div>
                   ) : (
-                    <p className="text-[12px] sm:text-sm md:text-base lg:text-lg leading-relaxed p-4 sm:p-6 md:p-8">
+                    <p className="text-[11px] sm:text-sm md:text-base lg:text-lg leading-relaxed p-4 sm:p-6 md:p-8">
                       {sentence.split("\n").map((line, lineIdx) => (
                         <span key={lineIdx} className="block mb-1 sm:mb-2">
                           {line}

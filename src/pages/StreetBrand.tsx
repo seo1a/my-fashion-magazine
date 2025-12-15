@@ -4,6 +4,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import BrandNavigation from "../components/BrandNavigation";
+import brandNavImg from "../assets/brandNav.png";
+import brandNavImg2 from "../assets/brandNav2.png";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -159,62 +162,7 @@ export default function StreetBrand() {
     if (!isMobile || !trackRef.current || brandData.length === 0) return;
 
     const track = trackRef.current;
-    /*
-    let scrollPosition = 0;
-
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartX.current = e.touches[0].clientX;
-      touchStartY.current = e.touches[0].clientY;
-      scrollPosition = track.scrollLeft;
-      isScrolling.current = false;
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!touchStartX.current || !touchStartY.current) return;
-
-      const touchX = e.touches[0].clientX;
-      const touchY = e.touches[0].clientY;
-      const diffX = touchStartX.current - touchX;
-      const diffY = touchStartY.current - touchY;
-
-      // 가로 스와이프인지 확인 (가로 이동이 세로 이동보다 클 때)
-      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 10) {
-        isScrolling.current = true;
-        e.preventDefault(); // 세로 스크롤 방지
-        track.scrollLeft = scrollPosition + diffX;
-      }
-    };
-
-    const handleTouchEnd = () => {
-      touchStartX.current = 0;
-      touchStartY.current = 0;
-    };
-
-    // 끝에 도달했는지 확인
-    const checkEnd = () => {
-      const maxScroll = track.scrollWidth - track.clientWidth;
-      // 마지막 사진이 모두 보이고 추가 여백까지 스크롤한 후에만 다음 페이지로 이동
-      if (track.scrollLeft >= maxScroll - 100 && !navigatedRef.current) {
-        navigatedRef.current = true;
-        setTimeout(() => {
-          navigate("/street/item");
-        }, 500);
-      } else if (track.scrollLeft < maxScroll - 100) {
-        navigatedRef.current = false;
-      }
-    };
-
-    track.addEventListener('touchstart', handleTouchStart, { passive: false });
-    track.addEventListener('touchmove', handleTouchMove, { passive: false });
-    track.addEventListener('touchend', handleTouchEnd);
-    track.addEventListener('scroll', checkEnd);
-
-    return () => {
-      track.removeEventListener('touchstart', handleTouchStart);
-      track.removeEventListener('touchmove', handleTouchMove);
-      track.removeEventListener('touchend', handleTouchEnd);
-      track.removeEventListener('scroll', checkEnd);
-    };*/
+  
   }, [isMobile, brandData, navigate]);
 
   // PC: ScrollTrigger 설정

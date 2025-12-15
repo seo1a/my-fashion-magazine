@@ -25,10 +25,10 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-white/10">
-      <div className="mx-auto flex max-w-8xl items-center justify-between px-4 sm:px-8 md:px-16 lg:px-32 xl:px-56 py-3 sm:py-4 md:py-6 font-noto_sans text-myGreen">
+      <div className="mx-auto flex max-w-8xl items-center justify-between px-6 sm:px-8 md:px-16 lg:px-32 xl:px-56 py-4 sm:py-4 md:py-6 font-noto_sans text-myGreen">
         <Link to="/" className="cursor-pointer" onClick={closeMenu}>
-          <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-aftermath tracking-[0.1em] sm:tracking-[0.2em] md:tracking-[0.35em]">
-            STREET
+          <span className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-aftermath tracking-[0.1em] sm:tracking-[0.2em] md:tracking-[0.35em]">
+            STRXXT
           </span>
         </Link>
         
