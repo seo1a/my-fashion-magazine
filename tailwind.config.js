@@ -7,6 +7,7 @@ export default {
     extend: {
       fontFamily: {
         noto_sans: ['noto-sans', 'sans-serif'],
+        noto_sans_light: ['noto-sans-light', 'sans-serif'],
         poppins: ['poppins', 'sans-serif'],
         poppins_black: ['poppins-black', 'sans-serif'],
         freesentation: ['freesentation-regular', 'sans-serif'],

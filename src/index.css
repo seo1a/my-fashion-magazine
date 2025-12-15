@@ -16,6 +16,11 @@ body {
 }
 
 @font-face {
+  font-family: 'noto-sans-light';
+  src: url('/assets/NotoSansKR-Light.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'freesentation-regular';
   src: url('../src/assets/Freesentation-4Regular.ttf') format('truetype');
 }

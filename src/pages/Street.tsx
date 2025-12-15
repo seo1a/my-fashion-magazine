@@ -162,10 +162,9 @@ export default function Street() {
             ref={titleRef}
             className="font-aftermath text-myGreen text-center text-7xl md:text-8xl lg:text-9xl"
           >
-            STREET
-            <br className="sm:hidden" />
-            <span className="hidden sm:inline"> </span>
-            FASHION
+            <span className="block sm:inline">STREET</span>
+            <span className="hidden sm:inline">&nbsp;</span>
+            <span className="block sm:inline">FASHION</span>
           </h1>
         </section>
 
@@ -213,7 +212,7 @@ export default function Street() {
                 {/* 설명글 */}
                 <div
                   className={`sentence ${isMobile ? 'relative mt-4 w-full flex justify-center' : 'absolute z-10'} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 
-                    leading-relaxed font-noto_sans text-white 
+                    leading-relaxed font-noto_sans_light text-white 
                     ${idx % 2 === 0 
                       ? isMobile 
                         ? "" 
