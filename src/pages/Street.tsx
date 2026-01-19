@@ -160,11 +160,9 @@ export default function Street() {
         <section className="headline-container px-6 md:px-12" aria-hidden>
           <h1
             ref={titleRef}
-            className="font-aftermath text-myGreen text-center text-7xl md:text-8xl lg:text-9xl"
+            className="font-aftermath text-myGreen text-center text-7xl md:text-8xl lg:text-[180px]"
           >
-            <span className="block sm:inline">STREET</span>
-            <span className="hidden sm:inline">&nbsp;</span>
-            <span className="block sm:inline">FASHION</span>
+            <span className="block sm:inline">STRXXT</span>
           </h1>
         </section>
 
