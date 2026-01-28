@@ -6,6 +6,8 @@ import Navigation from "../components/Navigation";
 import BrandNavigation from "../components/BrandNavigation";
 import brandNavImg from "../assets/brandNav.png";
 import brandNavImg2 from "../assets/brandNav2.png";
+import { useScrollDepth } from "../hooks/useScrollDepth";
+import { useAutoTransition } from "../hooks/useAutoTransition";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -22,6 +24,10 @@ interface Brand {
 }
 
 export default function StreetBrand() {
+  /* GA4 */
+  useScrollDepth(75);
+  useAutoTransition("/item");
+
   const wrapperRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const brandRefs = useRef<Array<HTMLDivElement | null>>([]);

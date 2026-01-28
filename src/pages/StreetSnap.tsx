@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
 import Modal from "../components/Modal";
+import ReactGA from "react-ga4";
 
 export default function StreetSnap() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -38,6 +39,11 @@ export default function StreetSnap() {
                   src={snap.이미지링크}
                   alt={`snap-${idx}`}
                   className="w-full max-w-[160px] sm:max-w-[220px] md:max-w-[320px] h-auto aspect-[3/4] object-cover transform group-hover:scale-105 transition-transform duration-300"
+                  onClick={() =>
+                    ReactGA.event("snap_interaction", {
+                      type: "image_click",
+                    })
+                  }
                 />
                 {/* 출처 버튼 */}
                 <a
@@ -45,7 +51,15 @@ export default function StreetSnap() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-myGreen text-black text-xs px-2 py-1 rounded opacity-80 hover:opacity-100"
-                  onClick={(e) => e.stopPropagation()}
+                  onClick={(e) => {
+                    e.stopPropagation();
+
+                    ReactGA.event("snap_interaction", {
+                      type: "external_link",
+                      snap_index: idx,
+                      url: snap.출처링크,
+                    });
+                  }}
                 >
                   🔗
                 </a>

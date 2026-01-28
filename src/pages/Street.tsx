@@ -4,12 +4,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import Navigation from "../components/Navigation";
-import "../styles/Street.css"; // 추가된 CSS
+import "../styles/Street.css"; // 추가 CSS
 import word1Image from "../assets/word1.png";
 import word2Image from "../assets/word2.png";
 import word3Image from "../assets/word3.png";
 import word4Image from "../assets/word4.png";
 import word5Image from "../assets/word5.png";
+import { useScrollDepth } from "../hooks/useScrollDepth";
+import { useAutoTransition } from "../hooks/useAutoTransition";
 
 interface FashionData {
   설명: string;
@@ -19,6 +21,10 @@ interface FashionData {
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function Street() {
+  /* GA4 */
+  useScrollDepth(75);
+  useAutoTransition("/brand");
+  
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [streetData, setStreetData] = useState<FashionData | null>(null);
   const navigate = useNavigate();

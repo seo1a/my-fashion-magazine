@@ -1,6 +1,7 @@
 import { type FC, useState, useEffect, useRef } from "react";
 import brandNavImg2 from "../assets/brandNav2.png";
 import gsap from "gsap";
+import ReactGA from "react-ga4";
 
 interface BrandNavigationProps {
   brands: string[];
@@ -51,6 +52,12 @@ const BrandNavigation: FC<BrandNavigationProps> = ({ brands, scrollToBrand }) =>
   };
 
   const handleBrandClick = (index: number) => {
+    ReactGA.event("brand_nav_click", {
+      brand_index: index,
+      brand_name: brandNames[index],
+      device: "mobile",
+    });
+    
     scrollToBrand(index);
     // 이동 완료 후 메뉴 닫기
     setTimeout(() => {
@@ -69,7 +76,14 @@ const BrandNavigation: FC<BrandNavigationProps> = ({ brands, scrollToBrand }) =>
         {brandNames.map((name, index) => (
           <button
             key={index}
-            onClick={() => scrollToBrand(index)}
+            onClick={() => {
+              ReactGA.event("brand_nav_click", {
+                brand_index: index,
+                brand_name: brandNames[index],
+                device: "pc",
+              });
+              scrollToBrand(index)
+            }}
             disabled={name === "Placeholder"}
             className={`w-4 h-6 sm:w-5 sm:h-7 md:w-6 md:h-8 flex items-center justify-center
               text-myGreen text-sm sm:text-base md:text-xl lg:text-2xl font-poppins_black
