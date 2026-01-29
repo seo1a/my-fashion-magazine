@@ -23,7 +23,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 export default function Street() {
   /* GA4 */
   useScrollDepth(75);
-  useAutoTransition("/brand");
+  useAutoTransition("/street/brand");
   
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [streetData, setStreetData] = useState<FashionData | null>(null);

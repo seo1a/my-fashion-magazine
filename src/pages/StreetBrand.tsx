@@ -26,7 +26,7 @@ interface Brand {
 export default function StreetBrand() {
   /* GA4 */
   useScrollDepth(75);
-  useAutoTransition("/item");
+  useAutoTransition("/street/item");
 
   const wrapperRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
