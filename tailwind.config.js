@@ -13,6 +13,7 @@ export default {
         freesentation: ['freesentation-regular', 'sans-serif'],
         freesentation_bold: ['freesentation-bold', 'sans-serif'],
         aftermath: ['aftermath', 'sans-serif'],
+        cheer: ['cheer', 'sans-serif'],
       },
       colors: {
         myBlue: "#4246ce",

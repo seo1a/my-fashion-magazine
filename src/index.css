@@ -45,6 +45,11 @@ body {
   src: url('/assets/aftermath.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'cheer';
+  src: url('/assets/A치어리더.TTF') format('truetype');
+}
+
 /* ScrollTrigger 마커 숨기기 - opacity만 사용하여 레이어 구조는 유지 */
 .gsap-marker,
 [class*="gsap-marker"] {
