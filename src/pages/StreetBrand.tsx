@@ -7,7 +7,6 @@ import BrandNavigation from "../components/BrandNavigation";
 import brandNavImg from "../assets/brandNav.png";
 import brandNavImg2 from "../assets/brandNav2.png";
 import { useScrollDepth } from "../hooks/useScrollDepth";
-import { useAutoTransition } from "../hooks/useAutoTransition";
 import ReactGA from "react-ga4";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -33,9 +32,7 @@ export default function StreetBrand() {
   const [brandData, setBrandData] = useState<Brand[]>([]);
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
-  const touchStartX = useRef<number>(0);
-  const touchStartY = useRef<number>(0);
-  const isScrolling = useRef<boolean>(false);
+  const mobileNavigatedRef = useRef(false);
 
   // 🔧 끝을 살짝 더 보여주기 위한 패딩(px) - 마지막 사진 이후 여유 공간
   const END_PAD = 300; // 마지막 사진이 모두 보이도록 충분한 패딩
@@ -251,24 +248,25 @@ export default function StreetBrand() {
     };
   }, [navigate, brandData, isMobile]);
 
+  // 모바일 스크롤 최하단 감지 -> navigate
   useEffect(() => {
     if (!isMobile || !trackRef.current) return;
 
     const track = trackRef.current;
-    let triggered = false;
 
     const onScroll = () => {
       const isEnd =
-        track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+        track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
 
-      if (isEnd && !triggered) {
-        triggered = true;
+      if (isEnd && !mobileNavigatedRef.current) {
+        mobileNavigatedRef.current = true;
 
+        // 🔴 snap 방해 제거
         track.style.scrollSnapType = "none";
-        
+
         ReactGA.event("auto_page_transition", {
-          next_page: "/street/item",
           from: "street/brand",
+          to: "street/item",
           device: "mobile",
         });
 
@@ -276,7 +274,7 @@ export default function StreetBrand() {
       }
     };
 
-    track.addEventListener("scroll", onScroll);
+    track.addEventListener("scroll", onScroll, { passive: true });
     return () => track.removeEventListener("scroll", onScroll);
   }, [isMobile, navigate]);
 
