@@ -92,7 +92,7 @@ export default function StreetBrand() {
       .catch((e) => console.error("Failed to load JSON data:", e));
   }, []);
 
-  // ▶ 네비 버튼 클릭 시: 트랙 내 해당 브랜드 위치로 스크롤 이동
+  // 네비 버튼 클릭 시: 트랙 내 해당 브랜드 위치로 스크롤 이동
   const scrollToBrand = (index: number) => {
     const track = trackRef.current;
     const brand = brandRefs.current[index];
@@ -250,6 +250,60 @@ export default function StreetBrand() {
       tween.kill();
     };
   }, [navigate, brandData, isMobile]);
+
+  useEffect(() => {
+    if (!isMobile || !trackRef.current) return;
+
+    const track = trackRef.current;
+    let triggered = false;
+
+    const onScroll = () => {
+      const isEnd =
+        track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+
+      if (isEnd && !triggered) {
+        triggered = true;
+
+        ReactGA.event("auto_page_transition", {
+          next_page: "/street/item",
+          from: "street/brand",
+          device: "mobile",
+        });
+
+        navigate("/street/item");
+      }
+    };
+
+    track.addEventListener("scroll", onScroll);
+    return () => track.removeEventListener("scroll", onScroll);
+  }, [isMobile, navigate]);
+
+  useEffect(() => {
+    if (!isMobile || !trackRef.current) return;
+
+    const track = trackRef.current;
+    let triggered = false;
+
+    const onScroll = () => {
+      const isEnd =
+        track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+
+      if (isEnd && !triggered) {
+        triggered = true;
+
+        ReactGA.event("auto_page_transition", {
+          from: "street/brand",
+          to: "street/item",
+          device: "mobile",
+        });
+
+        navigate("/street/item");
+      }
+    };
+
+    track.addEventListener("scroll", onScroll);
+    return () => track.removeEventListener("scroll", onScroll);
+  }, [isMobile, navigate]);
 
   return (
     <div className={`relative w-full bg-black text-white ${isMobile ? 'h-screen overflow-hidden' : ''}`}>
