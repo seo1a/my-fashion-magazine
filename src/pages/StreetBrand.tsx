@@ -209,7 +209,6 @@ export default function StreetBrand() {
       pin: true,
       pinSpacing: true,
       anticipatePin: 1,
-      markers: true,
 
       onUpdate: (self) => {
         if (!navigatedRef.current && self.direction === 1 && self.progress >= threshold) {
@@ -255,27 +254,37 @@ export default function StreetBrand() {
     const track = trackRef.current;
 
     const onScroll = () => {
-      const isEnd =
-        track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
+      const scrollLeft = track.scrollLeft;
+      const scrollWidth = track.scrollWidth;
+      const clientWidth = track.clientWidth;
+      const maxScroll = scrollWidth - clientWidth;
+      
+      // 스크롤이 끝에서 100px 이내에 도달했는지 확인 (더 여유있게)
+      const isNearEnd = scrollLeft >= maxScroll - 100;
 
-      if (isEnd && !mobileNavigatedRef.current) {
-        mobileNavigatedRef.current = true;
+      if (isNearEnd && !mobileNavigatedRef.current) {
+        const currentScrollLeft = track.scrollLeft;
+        const currentMaxScroll = track.scrollWidth - track.clientWidth;
+        
+        if (currentScrollLeft >= currentMaxScroll - 100 && !mobileNavigatedRef.current) {
+          mobileNavigatedRef.current = true;
 
-        // 🔴 snap 방해 제거
-        track.style.scrollSnapType = "none";
+          ReactGA.event("auto_page_transition", {
+            from: "street/brand",
+            to: "street/item",
+            device: "mobile",
+          });
 
-        ReactGA.event("auto_page_transition", {
-          from: "street/brand",
-          to: "street/item",
-          device: "mobile",
-        });
-
-        navigate("/street/item");
+          navigate("/street/item");
+        }
       }
     };
 
     track.addEventListener("scroll", onScroll, { passive: true });
-    return () => track.removeEventListener("scroll", onScroll);
+    
+    return () => {
+      track.removeEventListener("scroll", onScroll);
+    };
   }, [isMobile, navigate]);
 
   return (
@@ -293,11 +302,12 @@ export default function StreetBrand() {
         <div 
           ref={trackRef} 
           className={`flex h-full gallery-track ${
-            isMobile ? 'overflow-x-auto overflow-y-hidden snap-x snap-mandatory' : ''
+            isMobile ? 'overflow-x-auto overflow-y-hidden' : ''
           }`}
           style={isMobile ? { 
             WebkitOverflowScrolling: 'touch',
-            scrollBehavior: 'smooth'
+            scrollBehavior: 'smooth',
+            scrollSnapType: 'none'
           } : {
             width: 'max-content'
           }}
@@ -306,7 +316,7 @@ export default function StreetBrand() {
             <div 
               key={brandIndex} 
               className={`flex mr-8 sm:mr-16 md:mr-32 lg:mr-52 ${
-                isMobile ? 'snap-start flex-shrink-0' : 'h-full'
+                isMobile ? 'flex-shrink-0' : 'h-full'
               }`}
               style={!isMobile ? {
                 minHeight: '100%',
@@ -361,8 +371,15 @@ export default function StreetBrand() {
               ))}
             </div>
           ))}
-          {/* 마지막 브랜드 이후 추가 여백 */}
-          <div className="flex-shrink-0 w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px]"></div>
+          {/* 마지막 브랜드 이후 추가 여백 - 모바일에서 더 크게 */}
+          <div 
+            className="flex-shrink-0" 
+            style={{
+              width: isMobile ? '100vw' : '500px'
+            }}
+          >
+            {/* 페이지 전환 트리거 영역 */}
+          </div>
         </div>
       </section>
     </div>
