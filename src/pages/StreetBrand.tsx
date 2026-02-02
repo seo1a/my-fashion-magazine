@@ -264,36 +264,11 @@ export default function StreetBrand() {
       if (isEnd && !triggered) {
         triggered = true;
 
+        track.style.scrollSnapType = "none";
+        
         ReactGA.event("auto_page_transition", {
           next_page: "/street/item",
           from: "street/brand",
-          device: "mobile",
-        });
-
-        navigate("/street/item");
-      }
-    };
-
-    track.addEventListener("scroll", onScroll);
-    return () => track.removeEventListener("scroll", onScroll);
-  }, [isMobile, navigate]);
-
-  useEffect(() => {
-    if (!isMobile || !trackRef.current) return;
-
-    const track = trackRef.current;
-    let triggered = false;
-
-    const onScroll = () => {
-      const isEnd =
-        track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
-
-      if (isEnd && !triggered) {
-        triggered = true;
-
-        ReactGA.event("auto_page_transition", {
-          from: "street/brand",
-          to: "street/item",
           device: "mobile",
         });
 
